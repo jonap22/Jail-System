@@ -53,6 +53,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="L&#xed;der"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLiderActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnIntegrante1">
       <Properties>

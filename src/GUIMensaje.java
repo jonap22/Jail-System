@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -33,6 +36,11 @@ public class GUIMensaje extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btnLider.setText("Líder");
+        btnLider.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLiderActionPerformed(evt);
+            }
+        });
 
         btnIntegrante1.setText("Integrante 1");
 
@@ -64,6 +72,11 @@ public class GUIMensaje extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnLiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLiderActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(rootPane, "Hola soy Jonathan");
+    }//GEN-LAST:event_btnLiderActionPerformed
 
     /**
      * @param args the command line arguments
