@@ -11,9 +11,9 @@
 public class PresoCumpliendoCondena {
     //Variables
     private String carcelanterior;
-    
+    private String motivo;    
     //Métodos
-    
+    public void reasignacionCarcel(){}
     //Get
     public String getCarcelanterior() {
         return carcelanterior;

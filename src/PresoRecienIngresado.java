@@ -13,8 +13,9 @@ public class PresoRecienIngresado {
     private int numerodeingreso;
     
     //Métodos
-    
+    public void asigIndent(){}
     //Get
+    
     public int getNumerodeingreso() {
         return numerodeingreso;
     }

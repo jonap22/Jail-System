@@ -13,7 +13,6 @@ public class PresoProcesoLibertad {
     private String juezencargado;
     private int fechadesolicitud;
     //Métodos
-    
     //Get
     public String getJuezencargado() {
         return juezencargado;
@@ -22,7 +21,7 @@ public class PresoProcesoLibertad {
     public int getFechadesolicitud() {
         return fechadesolicitud;
     }
-    
+
     //Set
     public void setJuezencargado(String juezencargado) {
         this.juezencargado = juezencargado;

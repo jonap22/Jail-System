@@ -14,8 +14,9 @@ public class PresoCondenaAplicada {
     private String juezencargado;
     
     //Métodos
-    
+    public void condenaAplicada(){}
     //Get
+    
     public double getTiempodecontena() {
         return tiempodecontena;
     }

@@ -8,7 +8,7 @@
  *
  * @author junio
  */
-public class Preso {
+public abstract class Preso {
     //Variables
     private String nombre;
     private String apellido;
@@ -20,8 +20,9 @@ public class Preso {
     private boolean estadodesentecia;
     private int niveldepeligrosidad;
     private String delito;
-    
     //Métodos
+    
+    protected abstract String arresto();
     //Get
     public String getNombre() {
         return nombre;

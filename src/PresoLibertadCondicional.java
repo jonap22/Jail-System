@@ -11,15 +11,25 @@
 public class PresoLibertadCondicional {
     //Variables
     private int tiemporestante;
-    
+    private String motivoLibCond;
     //Métodos
-    
+    public void calculoTiempoRestante(){}
+    public void motivoLibCond(){}
     //Get
+    public String getMotivoLibCond() {
+        return motivoLibCond;
+    }
+    
     public int getTiemporestante() {
         return tiemporestante;
     }
     
     //Set
+    
+    public void setMotivoLibCond(String motivoLibCond) {
+        this.motivoLibCond = motivoLibCond;
+    }
+
     public void setTiemporestante(int tiemporestante) {
         this.tiemporestante = tiemporestante;
     }
