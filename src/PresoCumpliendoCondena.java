@@ -10,4 +10,6 @@
  */
 public class PresoCumpliendoCondena {
     
+    String carcelanterior;
+    
 }

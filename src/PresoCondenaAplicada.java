@@ -10,4 +10,7 @@
  */
 public class PresoCondenaAplicada {
     
+    double tiempodecontena;
+    String juezencargado;
+    
 }
