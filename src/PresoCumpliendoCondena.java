@@ -9,7 +9,19 @@
  * @author junio
  */
 public class PresoCumpliendoCondena {
+    //Variables
+    private String carcelanterior;
     
-    String carcelanterior;
+    //Métodos
+    
+    //Get
+    public String getCarcelanterior() {
+        return carcelanterior;
+    }
+    
+    //Set
+    public void setCarcelanterior(String carcelanterior) {
+        this.carcelanterior = carcelanterior;
+    }
     
 }

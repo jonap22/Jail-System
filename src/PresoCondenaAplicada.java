@@ -9,8 +9,28 @@
  * @author Faustito
  */
 public class PresoCondenaAplicada {
+    //Variables
+    private double tiempodecontena;
+    private String juezencargado;
     
-    double tiempodecontena;
-    String juezencargado;
+    //Métodos
+    
+    //Get
+    public double getTiempodecontena() {
+        return tiempodecontena;
+    }
+
+    public String getJuezencargado() {
+        return juezencargado;
+    }
+    
+    //Set
+    public void setTiempodecontena(double tiempodecontena) {
+        this.tiempodecontena = tiempodecontena;
+    }
+
+    public void setJuezencargado(String juezencargado) {
+        this.juezencargado = juezencargado;
+    }
     
 }

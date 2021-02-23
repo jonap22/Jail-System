@@ -9,7 +9,16 @@
  * @author Faustito
  */
 public class PresoLibre {
+    //Variables
+    private int fechadesalida;
+    //Métodos
+    //Get
+    public int getFechadesalida() {
+        return fechadesalida;
+    }
     
-    int fechadesalida;
-    
+    //Set
+    public void setFechadesalida(int fechadesalida) {
+        this.fechadesalida = fechadesalida;
+    }
 }

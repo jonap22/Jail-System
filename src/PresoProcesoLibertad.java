@@ -9,8 +9,26 @@
  * @author junio
  */
 public class PresoProcesoLibertad {
+    //Variables
+    private String juezencargado;
+    private int fechadesolicitud;
+    //Métodos
     
-    String juezencargado;
-    int fechadesolicitud;
+    //Get
+    public String getJuezencargado() {
+        return juezencargado;
+    }
+
+    public int getFechadesolicitud() {
+        return fechadesolicitud;
+    }
     
+    //Set
+    public void setJuezencargado(String juezencargado) {
+        this.juezencargado = juezencargado;
+    }
+
+    public void setFechadesolicitud(int fechadesolicitud) {
+        this.fechadesolicitud = fechadesolicitud;
+    }
 }

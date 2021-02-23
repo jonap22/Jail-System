@@ -9,7 +9,19 @@
  * @author Faustito
  */
 public class PresoLibertadCondicional {
+    //Variables
+    private int tiemporestante;
     
-    int tiemporestante;
+    //Métodos
+    
+    //Get
+    public int getTiemporestante() {
+        return tiemporestante;
+    }
+    
+    //Set
+    public void setTiemporestante(int tiemporestante) {
+        this.tiemporestante = tiemporestante;
+    }
     
 }

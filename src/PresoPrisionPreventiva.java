@@ -9,7 +9,18 @@
  * @author Faustito
  */
 public class PresoPrisionPreventiva {
+    //Variables
+    private String juezencargado;
     
-    String juezencargado;
+    //Métodos
     
+    //Get
+    public String getJuezencargado() {
+        return juezencargado;
+    }
+    
+    //Set
+    public void setJuezencargado(String juezencargado) {
+        this.juezencargado = juezencargado;
+    }
 }

@@ -9,7 +9,18 @@
  * @author junio
  */
 public class PresoRecienIngresado {
+    //Variables
+    private int numerodeingreso;
     
-    int numerodeingreso;
+    //Métodos
     
+    //Get
+    public int getNumerodeingreso() {
+        return numerodeingreso;
+    }
+    
+    //Set
+    public void setNumerodeingreso(int numerodeingreso) {
+        this.numerodeingreso = numerodeingreso;
+    }
 }
