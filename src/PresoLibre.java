@@ -10,4 +10,6 @@
  */
 public class PresoLibre {
     
+    int fechadesalida;
+    
 }

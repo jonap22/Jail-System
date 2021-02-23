@@ -10,4 +10,7 @@
  */
 public class PresoProcesoLibertad {
     
+    String juezencargado;
+    int fechadesolicitud;
+    
 }

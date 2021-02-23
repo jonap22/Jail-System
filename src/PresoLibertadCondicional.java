@@ -10,4 +10,6 @@
  */
 public class PresoLibertadCondicional {
     
+    int tiemporestante;
+    
 }
