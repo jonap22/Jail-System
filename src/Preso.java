@@ -10,4 +10,17 @@
  */
 public class Preso {
     
+    String nombre;
+    String apellido;
+    String nacionalidad;
+    int cedula;
+    int pasaporte;
+    int fechadenacimiento;
+    int fechadeingreso;
+    boolean reincidencia;
+    double tiempodecontena;
+    boolean estadodesentecia;
+    int niveldepeligrosidad;   
+    
+    
 }
