@@ -13,12 +13,12 @@ public abstract class Preso {
     private String nombre;
     private String apellido;
     private String nacionalidad;
-    private int documentodeindentidad;
-    private int fechadenacimiento;
-    private int fechadeingreso;
+    private int documentoDeIdentidad;
+    private String fechaDeNacimiento;
+    private String fechaDeIngreso;
     private boolean reincidencia;    
-    private boolean estadodesentecia;
-    private int niveldepeligrosidad;
+    private boolean estadoDeSentencia;
+    private int nivelDePeligrosidad;
     private String delito;
     
     //Métodos
@@ -38,15 +38,15 @@ public abstract class Preso {
     }
 
     public int getDocumentodeindentidad() {
-        return documentodeindentidad;
+        return documentoDeIdentidad;
     }
 
-    public int getFechadenacimiento() {
-        return fechadenacimiento;
+    public String getFechadenacimiento() {
+        return fechaDeNacimiento;
     }
 
-    public int getFechadeingreso() {
-        return fechadeingreso;
+    public String getFechadeingreso() {
+        return fechaDeIngreso;
     }
 
     public boolean isReincidencia() {
@@ -54,11 +54,11 @@ public abstract class Preso {
     }
 
     public boolean isEstadodesentecia() {
-        return estadodesentecia;
+        return estadoDeSentencia;
     }
 
     public int getNiveldepeligrosidad() {
-        return niveldepeligrosidad;
+        return nivelDePeligrosidad;
     }
 
     public String getDelito() {
@@ -79,15 +79,15 @@ public abstract class Preso {
     }
 
     public void setDocumentodeindentidad(int documentodeindentidad) {
-        this.documentodeindentidad = documentodeindentidad;
+        this.documentoDeIdentidad = documentodeindentidad;
     }
 
-    public void setFechadenacimiento(int fechadenacimiento) {
-        this.fechadenacimiento = fechadenacimiento;
+    public void setFechadenacimiento(String fechadenacimiento) {
+        this.fechaDeNacimiento = fechadenacimiento;
     }
 
-    public void setFechadeingreso(int fechadeingreso) {
-        this.fechadeingreso = fechadeingreso;
+    public void setFechadeingreso(String fechadeingreso) {
+        this.fechaDeIngreso = fechadeingreso;
     }
 
     public void setReincidencia(boolean reincidencia) {
@@ -95,11 +95,11 @@ public abstract class Preso {
     }
 
     public void setEstadodesentecia(boolean estadodesentecia) {
-        this.estadodesentecia = estadodesentecia;
+        this.estadoDeSentencia = estadodesentecia;
     }
 
     public void setNiveldepeligrosidad(int niveldepeligrosidad) {
-        this.niveldepeligrosidad = niveldepeligrosidad;
+        this.nivelDePeligrosidad = niveldepeligrosidad;
     }
 
     public void setDelito(String delito) {

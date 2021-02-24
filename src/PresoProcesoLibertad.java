@@ -10,25 +10,26 @@
  */
 public class PresoProcesoLibertad extends Preso{
     //Variables
-    private String juezencargado;
-    private int fechadesolicitud;
+    private String juezEncargado;
+    private int fechaDeSolicitud;
+    
     //Métodos
     //Get
     public String getJuezencargado() {
-        return juezencargado;
+        return juezEncargado;
     }
 
     public int getFechadesolicitud() {
-        return fechadesolicitud;
+        return fechaDeSolicitud;
     }
 
     //Set
     public void setJuezencargado(String juezencargado) {
-        this.juezencargado = juezencargado;
+        this.juezEncargado = juezencargado;
     }
 
     public void setFechadesolicitud(int fechadesolicitud) {
-        this.fechadesolicitud = fechadesolicitud;
+        this.fechaDeSolicitud = fechadesolicitud;
     }
 
     @Override

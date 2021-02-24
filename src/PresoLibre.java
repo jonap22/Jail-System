@@ -10,16 +10,16 @@
  */
 public class PresoLibre extends PresoProcesoLibertad{
     //Variables
-    private int fechadesalida;
+    private int fechaDeSalida;
     //Métodos
     //Get
     
     public int getFechadesalida() {
-        return fechadesalida;
+        return fechaDeSalida;
     }
     
     //Set
     public void setFechadesalida(int fechadesalida) {
-        this.fechadesalida = fechadesalida;
+        this.fechaDeSalida = fechadesalida;
     }
 }

@@ -10,28 +10,28 @@
  */
 public class PresoCondenaAplicada extends PresoRecienIngresado {
     //Variables
-    private double tiempodecontena;
-    private String juezencargado;
+    private double tiempoDeCondena;
+    private String JuezEncargado;
     
     //Métodos
     public void condenaAplicada(){}
     //Get
     
     public double getTiempodecontena() {
-        return tiempodecontena;
+        return tiempoDeCondena;
     }
 
     public String getJuezencargado() {
-        return juezencargado;
+        return JuezEncargado;
     }
     
     //Set
     public void setTiempodecontena(double tiempodecontena) {
-        this.tiempodecontena = tiempodecontena;
+        this.tiempoDeCondena = tiempodecontena;
     }
 
     public void setJuezencargado(String juezencargado) {
-        this.juezencargado = juezencargado;
+        this.JuezEncargado = juezencargado;
     }
     
 }

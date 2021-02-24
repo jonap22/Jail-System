@@ -10,7 +10,7 @@
  */
 public class PresoLibertadCondicional extends PresoProcesoLibertad {
     //Variables
-    private int tiemporestante;
+    private int tiempoRestante;
     private String motivoLibCond;
     
     //Métodos
@@ -23,7 +23,7 @@ public class PresoLibertadCondicional extends PresoProcesoLibertad {
     }
     
     public int getTiemporestante() {
-        return tiemporestante;
+        return tiempoRestante;
     }
     
     //Set
@@ -33,7 +33,7 @@ public class PresoLibertadCondicional extends PresoProcesoLibertad {
     }
 
     public void setTiemporestante(int tiemporestante) {
-        this.tiemporestante = tiemporestante;
+        this.tiempoRestante = tiemporestante;
     }
     
 }

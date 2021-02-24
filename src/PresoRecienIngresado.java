@@ -10,19 +10,19 @@
  */
 public class PresoRecienIngresado extends Preso {
     //Variables
-    private int numerodeingreso;
+    private int numeroDeIngreso;
     
     //Métodos
     public void asigIndent(){}
-    //Get
     
+    //Get
     public int getNumerodeingreso() {
-        return numerodeingreso;
+        return numeroDeIngreso;
     }
     
     //Set
     public void setNumerodeingreso(int numerodeingreso) {
-        this.numerodeingreso = numerodeingreso;
+        this.numeroDeIngreso = numerodeingreso;
     }
 
     @Override

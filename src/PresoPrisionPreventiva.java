@@ -10,17 +10,17 @@
  */
 public class PresoPrisionPreventiva extends PresoRecienIngresado{
     //Variables
-    private String juezencargado;
+    private String juezEncargado;
     
     //Métodos
     
     //Get
     public String getJuezencargado() {
-        return juezencargado;
+        return juezEncargado;
     }
     
     //Set
     public void setJuezencargado(String juezencargado) {
-        this.juezencargado = juezencargado;
+        this.juezEncargado = juezencargado;
     }
 }

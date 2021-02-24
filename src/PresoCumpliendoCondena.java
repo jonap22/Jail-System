@@ -10,18 +10,20 @@
  */
 public class PresoCumpliendoCondena extends Preso{
     //Variables
-    private String carcelanterior;
+    private String carcelAnterior;
     private String motivo;    
+    
     //Métodos
     public void reasignacionCarcel(){}
+    
     //Get
     public String getCarcelanterior() {
-        return carcelanterior;
+        return carcelAnterior;
     }
     
     //Set
     public void setCarcelanterior(String carcelanterior) {
-        this.carcelanterior = carcelanterior;
+        this.carcelAnterior = carcelanterior;
     }
 
     @Override
