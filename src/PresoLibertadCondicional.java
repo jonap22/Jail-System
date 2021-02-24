@@ -36,4 +36,28 @@ public class PresoLibertadCondicional extends PresoProcesoLibertad {
         this.tiempoRestante = tiemporestante;
     }
     
+    //Comstructor con datos
+
+    public PresoLibertadCondicional(int tiempoRestante, String motivoLibCond, 
+            String nombre, String apellido, String nacionalidad,
+            int documentoDeIdentidad, String fechaDeNacimiento, 
+            String fechaDeIngreso, boolean reincidencia, 
+            boolean estadoDeSentencia, int nivelDePeligrosidad, String delito) {
+        
+        super(nombre, apellido, nacionalidad, 
+                documentoDeIdentidad, fechaDeNacimiento, 
+                fechaDeIngreso, reincidencia, 
+                estadoDeSentencia, nivelDePeligrosidad, delito);
+        this.tiempoRestante = tiempoRestante;
+        this.motivoLibCond = motivoLibCond;
+    }
+    
+    
+    //toString
+    @Override
+    public String toString() {
+        return "PresoLibertadCondicional{" + "tiempoRestante=" + tiempoRestante 
+                + ", motivoLibCond=" + motivoLibCond + '}';
+    }
+    
 }

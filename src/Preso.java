@@ -8,6 +8,7 @@
  *
  * @author junio
  */
+
 public abstract class Preso {
     //Variables
     private String nombre;
@@ -104,6 +105,39 @@ public abstract class Preso {
 
     public void setDelito(String delito) {
         this.delito = delito;
+    }
+    
+    //Constructor
+    public Preso(String nombre, String apellido, String nacionalidad, 
+            int documentoDeIdentidad, String fechaDeNacimiento, 
+            String fechaDeIngreso, boolean reincidencia, 
+            boolean estadoDeSentencia, int nivelDePeligrosidad, String delito) {
+        
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.nacionalidad = nacionalidad;
+        this.documentoDeIdentidad = documentoDeIdentidad;
+        this.fechaDeNacimiento = fechaDeNacimiento;
+        this.fechaDeIngreso = fechaDeIngreso;
+        this.reincidencia = reincidencia;
+        this.estadoDeSentencia = estadoDeSentencia;
+        this.nivelDePeligrosidad = nivelDePeligrosidad;
+        this.delito = delito;
+    }
+    
+    //toString
+    @Override
+    public String toString() {
+        return "Preso{" + "nombre=" + nombre 
+                + ", apellido=" + apellido 
+                + ", nacionalidad=" + nacionalidad 
+                + ", documentoDeIdentidad=" + documentoDeIdentidad 
+                + ", fechaDeNacimiento=" + fechaDeNacimiento 
+                + ", fechaDeIngreso=" + fechaDeIngreso 
+                + ", reincidencia=" + reincidencia 
+                + ", estadoDeSentencia=" + estadoDeSentencia 
+                + ", nivelDePeligrosidad=" + nivelDePeligrosidad 
+                + ", delito=" + delito + '}';
     }
     
 }

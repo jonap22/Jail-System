@@ -31,4 +31,40 @@ public class PresoCumpliendoCondena extends Preso{
         throw new UnsupportedOperationException("Not supported yet."); 
     }
     
+    //Constructor clase padre
+    public PresoCumpliendoCondena(String nombre, String apellido, 
+            String nacionalidad, int documentoDeIdentidad, 
+            String fechaDeNacimiento, String fechaDeIngreso, 
+            boolean reincidencia, boolean estadoDeSentencia, 
+            int nivelDePeligrosidad, String delito) {
+        super(nombre, apellido, nacionalidad, documentoDeIdentidad, 
+                fechaDeNacimiento, fechaDeIngreso, reincidencia, 
+                estadoDeSentencia, nivelDePeligrosidad, delito);
+    }
+    
+    //Constructor con datos
+    public PresoCumpliendoCondena(String carcelAnterior, String motivo, 
+            String nombre, String apellido, String nacionalidad, 
+            int documentoDeIdentidad, String fechaDeNacimiento, 
+            String fechaDeIngreso, boolean reincidencia,
+            boolean estadoDeSentencia, int nivelDePeligrosidad,
+            String delito) {
+        
+        super(nombre, apellido, nacionalidad, documentoDeIdentidad, 
+                fechaDeNacimiento, fechaDeIngreso, 
+                reincidencia, estadoDeSentencia, 
+                nivelDePeligrosidad, delito);
+        
+        this.carcelAnterior = carcelAnterior;
+        this.motivo = motivo;
+    }
+    
+    //toString
+
+    @Override
+    public String toString() {
+        return "PresoCumpliendoCondena{" + "carcelAnterior=" + carcelAnterior 
+                + ", motivo=" + motivo + '}';
+    }
+    
 }

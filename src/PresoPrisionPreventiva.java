@@ -23,4 +23,29 @@ public class PresoPrisionPreventiva extends PresoRecienIngresado{
     public void setJuezencargado(String juezencargado) {
         this.juezEncargado = juezencargado;
     }
+    
+    //Constructor
+    public PresoPrisionPreventiva(String juezEncargado, int numeroDeIngreso, 
+            String nombre, String apellido, 
+            String nacionalidad, int documentoDeIdentidad,
+            String fechaDeNacimiento, String fechaDeIngreso, 
+            boolean reincidencia, boolean estadoDeSentencia, 
+            int nivelDePeligrosidad, String delito) {
+        
+        super(numeroDeIngreso, nombre, 
+                apellido, nacionalidad,
+                documentoDeIdentidad, fechaDeNacimiento, 
+                fechaDeIngreso, reincidencia, 
+                estadoDeSentencia, nivelDePeligrosidad, delito);
+        
+        this.juezEncargado = juezEncargado;
+    }
+    
+    
+    //toString
+    @Override
+    public String toString() {
+        return "PresoPrisionPreventiva{" + "juezEncargado=" + juezEncargado + '}';
+    }
+    
 }

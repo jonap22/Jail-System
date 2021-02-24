@@ -34,4 +34,30 @@ public class PresoCondenaAplicada extends PresoRecienIngresado {
         this.JuezEncargado = juezencargado;
     }
     
+    //Constructor
+    public PresoCondenaAplicada(double tiempoDeCondena, String JuezEncargado, 
+            String nombre, String apellido, 
+            String nacionalidad, int documentoDeIdentidad, 
+            String fechaDeNacimiento, String fechaDeIngreso, 
+            boolean reincidencia, boolean estadoDeSentencia, 
+            int nivelDePeligrosidad, String delito) {
+        
+        super(nombre, apellido, nacionalidad, 
+                documentoDeIdentidad, fechaDeNacimiento, 
+                fechaDeIngreso, reincidencia, 
+                estadoDeSentencia, nivelDePeligrosidad, delito);
+        
+        this.tiempoDeCondena = tiempoDeCondena;
+        this.JuezEncargado = JuezEncargado;
+        
+    }
+    
+    
+    //toString
+    @Override
+    public String toString() {
+        return "PresoCondenaAplicada{" + "tiempoDeCondena=" + tiempoDeCondena 
+                + ", JuezEncargado=" + JuezEncargado + '}';
+    }
+    
 }
