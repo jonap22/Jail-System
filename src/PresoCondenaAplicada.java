@@ -8,7 +8,7 @@
  *
  * @author Faustito
  */
-public class PresoCondenaAplicada {
+public class PresoCondenaAplicada extends PresoRecienIngresado {
     //Variables
     private double tiempodecontena;
     private String juezencargado;

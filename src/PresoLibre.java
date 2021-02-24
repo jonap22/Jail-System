@@ -8,7 +8,7 @@
  *
  * @author Faustito
  */
-public class PresoLibre {
+public class PresoLibre extends PresoProcesoLibertad{
     //Variables
     private int fechadesalida;
     //Métodos

@@ -20,9 +20,10 @@ public abstract class Preso {
     private boolean estadodesentecia;
     private int niveldepeligrosidad;
     private String delito;
-    //Métodos
     
+    //Métodos
     protected abstract String arresto();
+    
     //Get
     public String getNombre() {
         return nombre;

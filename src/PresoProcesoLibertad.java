@@ -8,7 +8,7 @@
  *
  * @author junio
  */
-public class PresoProcesoLibertad {
+public class PresoProcesoLibertad extends Preso{
     //Variables
     private String juezencargado;
     private int fechadesolicitud;
@@ -30,4 +30,11 @@ public class PresoProcesoLibertad {
     public void setFechadesolicitud(int fechadesolicitud) {
         this.fechadesolicitud = fechadesolicitud;
     }
+
+    @Override
+    protected String arresto() {
+        throw new UnsupportedOperationException("Not supported yet."); 
+    }
+    
+    
 }

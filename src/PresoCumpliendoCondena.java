@@ -8,7 +8,7 @@
  *
  * @author junio
  */
-public class PresoCumpliendoCondena {
+public class PresoCumpliendoCondena extends Preso{
     //Variables
     private String carcelanterior;
     private String motivo;    
@@ -22,6 +22,11 @@ public class PresoCumpliendoCondena {
     //Set
     public void setCarcelanterior(String carcelanterior) {
         this.carcelanterior = carcelanterior;
+    }
+
+    @Override
+    protected String arresto() {
+        throw new UnsupportedOperationException("Not supported yet."); 
     }
     
 }

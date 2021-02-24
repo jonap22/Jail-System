@@ -8,7 +8,7 @@
  *
  * @author Faustito
  */
-public class PresoPrisionPreventiva {
+public class PresoPrisionPreventiva extends PresoRecienIngresado{
     //Variables
     private String juezencargado;
     

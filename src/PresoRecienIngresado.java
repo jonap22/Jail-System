@@ -8,7 +8,7 @@
  *
  * @author junio
  */
-public class PresoRecienIngresado {
+public class PresoRecienIngresado extends Preso {
     //Variables
     private int numerodeingreso;
     
@@ -23,5 +23,10 @@ public class PresoRecienIngresado {
     //Set
     public void setNumerodeingreso(int numerodeingreso) {
         this.numerodeingreso = numerodeingreso;
+    }
+
+    @Override
+    protected String arresto() {
+        throw new UnsupportedOperationException("Not supported yet."); 
     }
 }

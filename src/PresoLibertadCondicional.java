@@ -8,13 +8,15 @@
  *
  * @author Faustito
  */
-public class PresoLibertadCondicional {
+public class PresoLibertadCondicional extends PresoProcesoLibertad {
     //Variables
     private int tiemporestante;
     private String motivoLibCond;
+    
     //Métodos
     public void calculoTiempoRestante(){}
     public void motivoLibCond(){}
+    
     //Get
     public String getMotivoLibCond() {
         return motivoLibCond;
