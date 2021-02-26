@@ -13,7 +13,9 @@ public class PresoRecienIngresado extends Preso {
     private int numeroDeIngreso;
 
     //Métodos
-    public void asigIndent(){}
+    public void asigIndent(int indent){
+        this.numeroDeIngreso=indent;
+    }
     
     //Get
     public int getNumerodeingreso() {

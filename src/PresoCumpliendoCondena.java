@@ -14,7 +14,9 @@ public class PresoCumpliendoCondena extends Preso{
     private String motivo;    
     
     //Métodos
-    public void reasignacionCarcel(){}
+    public String reasignacionCarcel(String carcelAnterior,String motivo){
+    return "El preso se encontraba en la carcel "+carcelAnterior+" pero se lo va a reasignar a otro centro por el siguiente motivo:"+motivo;
+    }
     
     //Get
     public String getCarcelanterior() {

@@ -14,7 +14,9 @@ public class PresoCondenaAplicada extends PresoRecienIngresado {
     private String JuezEncargado;
     
     //Métodos
-    public void condenaAplicada(){}
+    public String condenaAplicada(double tiempoDeCondena,String JuezEncargado){
+    return "La condena aplicada al sujeto es de un tiempo de "+tiempoDeCondena+" años ,la condena fue sentenciada por el juez "+JuezEncargado;
+    }
     //Get
     
     public double getTiempodecontena() {
