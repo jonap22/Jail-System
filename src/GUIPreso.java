@@ -28,54 +28,273 @@ public class GUIPreso extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btngDocumentoDeIdentidad = new javax.swing.ButtonGroup();
+        btngReincidencia = new javax.swing.ButtonGroup();
         lblTitulo = new javax.swing.JLabel();
-        btnSalir = new javax.swing.JButton();
+        pnlDatos = new javax.swing.JPanel();
+        txtNombre = new javax.swing.JTextField();
+        txtApellido = new javax.swing.JTextField();
+        txtNacionalidad = new javax.swing.JTextField();
+        lblNombre = new javax.swing.JLabel();
+        txtDelito = new javax.swing.JTextField();
+        lblApellido = new javax.swing.JLabel();
+        lblNacionalidad = new javax.swing.JLabel();
+        lblDelito = new javax.swing.JLabel();
+        rscFechaDeIngreso = new rojeru_san.componentes.RSDateChooser();
+        rscFechaDeNacimiento = new rojeru_san.componentes.RSDateChooser();
+        pnlIdentificacion = new javax.swing.JPanel();
+        rdbCedula = new javax.swing.JRadioButton();
+        rdbPasaporte = new javax.swing.JRadioButton();
+        txtDocumentoDeIdentidad = new javax.swing.JTextField();
+        pnlReincidencia = new javax.swing.JPanel();
+        rdbSi = new javax.swing.JRadioButton();
+        rdbNo = new javax.swing.JRadioButton();
+        pnlNivelDePeligrosidad = new javax.swing.JPanel();
+        cmbNivelDePeligrosidad = new javax.swing.JComboBox<>();
+        pnlEstadoDeSentencia = new javax.swing.JPanel();
+        cmbEstadoDeSentencia = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         lblTitulo.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         lblTitulo.setText("Sistema Penitenciario");
 
-        btnSalir.setText("Salir");
-        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+        pnlDatos.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos"));
+
+        txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalirActionPerformed(evt);
+                txtNombreActionPerformed(evt);
             }
         });
+
+        lblNombre.setText("Nombre");
+
+        lblApellido.setText("Apellido");
+
+        lblNacionalidad.setText("Nacionalidad");
+
+        lblDelito.setText("Delito");
+
+        javax.swing.GroupLayout pnlDatosLayout = new javax.swing.GroupLayout(pnlDatos);
+        pnlDatos.setLayout(pnlDatosLayout);
+        pnlDatosLayout.setHorizontalGroup(
+            pnlDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlDatosLayout.createSequentialGroup()
+                .addGroup(pnlDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblDelito)
+                    .addComponent(lblNacionalidad)
+                    .addComponent(lblApellido)
+                    .addComponent(lblNombre))
+                .addGap(18, 18, 18)
+                .addGroup(pnlDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtNombre)
+                    .addComponent(txtApellido)
+                    .addComponent(txtNacionalidad)
+                    .addComponent(txtDelito, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 7, Short.MAX_VALUE))
+        );
+        pnlDatosLayout.setVerticalGroup(
+            pnlDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlDatosLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pnlDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNombre)
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblApellido)
+                    .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNacionalidad)
+                    .addComponent(txtNacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblDelito)
+                    .addComponent(txtDelito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
+        rscFechaDeIngreso.setBorder(javax.swing.BorderFactory.createTitledBorder("Fecha de Ingreso"));
+        rscFechaDeIngreso.setColorBackground(new java.awt.Color(0, 0, 0));
+        rscFechaDeIngreso.setColorButtonHover(new java.awt.Color(0, 0, 0));
+
+        rscFechaDeNacimiento.setBorder(javax.swing.BorderFactory.createTitledBorder("Fecha de Nacimiento"));
+        rscFechaDeNacimiento.setColorBackground(new java.awt.Color(0, 0, 0));
+        rscFechaDeNacimiento.setColorButtonHover(new java.awt.Color(0, 0, 0));
+
+        pnlIdentificacion.setBorder(javax.swing.BorderFactory.createTitledBorder("Identificación"));
+
+        btngDocumentoDeIdentidad.add(rdbCedula);
+        rdbCedula.setText("Cedula");
+
+        btngDocumentoDeIdentidad.add(rdbPasaporte);
+        rdbPasaporte.setText("Pasaporte");
+
+        txtDocumentoDeIdentidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDocumentoDeIdentidadActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlIdentificacionLayout = new javax.swing.GroupLayout(pnlIdentificacion);
+        pnlIdentificacion.setLayout(pnlIdentificacionLayout);
+        pnlIdentificacionLayout.setHorizontalGroup(
+            pnlIdentificacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlIdentificacionLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlIdentificacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtDocumentoDeIdentidad)
+                    .addGroup(pnlIdentificacionLayout.createSequentialGroup()
+                        .addComponent(rdbCedula)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(rdbPasaporte)))
+                .addContainerGap())
+        );
+        pnlIdentificacionLayout.setVerticalGroup(
+            pnlIdentificacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlIdentificacionLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pnlIdentificacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rdbCedula)
+                    .addComponent(rdbPasaporte))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtDocumentoDeIdentidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        pnlReincidencia.setBorder(javax.swing.BorderFactory.createTitledBorder("Reincidencia"));
+
+        rdbSi.setText("SI");
+
+        rdbNo.setText("NO");
+
+        javax.swing.GroupLayout pnlReincidenciaLayout = new javax.swing.GroupLayout(pnlReincidencia);
+        pnlReincidencia.setLayout(pnlReincidenciaLayout);
+        pnlReincidenciaLayout.setHorizontalGroup(
+            pnlReincidenciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlReincidenciaLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(rdbSi)
+                .addGap(12, 12, 12)
+                .addComponent(rdbNo)
+                .addContainerGap())
+        );
+        pnlReincidenciaLayout.setVerticalGroup(
+            pnlReincidenciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlReincidenciaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlReincidenciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rdbSi)
+                    .addComponent(rdbNo))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        pnlNivelDePeligrosidad.setBorder(javax.swing.BorderFactory.createTitledBorder("Nivel De Peligrosidad"));
+
+        cmbNivelDePeligrosidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Baja", "Media", "Alta" }));
+        cmbNivelDePeligrosidad.setSelectedIndex(-1);
+
+        javax.swing.GroupLayout pnlNivelDePeligrosidadLayout = new javax.swing.GroupLayout(pnlNivelDePeligrosidad);
+        pnlNivelDePeligrosidad.setLayout(pnlNivelDePeligrosidadLayout);
+        pnlNivelDePeligrosidadLayout.setHorizontalGroup(
+            pnlNivelDePeligrosidadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlNivelDePeligrosidadLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cmbNivelDePeligrosidad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        pnlNivelDePeligrosidadLayout.setVerticalGroup(
+            pnlNivelDePeligrosidadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlNivelDePeligrosidadLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cmbNivelDePeligrosidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        pnlEstadoDeSentencia.setBorder(javax.swing.BorderFactory.createTitledBorder("Estado De Sentencia"));
+
+        cmbEstadoDeSentencia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Inicio", "Desarrollo", "Finalizado" }));
+        cmbEstadoDeSentencia.setSelectedIndex(-1);
+
+        javax.swing.GroupLayout pnlEstadoDeSentenciaLayout = new javax.swing.GroupLayout(pnlEstadoDeSentencia);
+        pnlEstadoDeSentencia.setLayout(pnlEstadoDeSentenciaLayout);
+        pnlEstadoDeSentenciaLayout.setHorizontalGroup(
+            pnlEstadoDeSentenciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEstadoDeSentenciaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cmbEstadoDeSentencia, 0, 117, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        pnlEstadoDeSentenciaLayout.setVerticalGroup(
+            pnlEstadoDeSentenciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlEstadoDeSentenciaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cmbEstadoDeSentencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(432, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lblTitulo)
-                        .addGap(432, 432, 432))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnSalir)
-                        .addGap(35, 35, 35))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(247, 247, 247)
+                        .addComponent(lblTitulo))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(pnlReincidencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(rscFechaDeIngreso, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                    .addComponent(rscFechaDeNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                    .addComponent(pnlIdentificacion, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(pnlDatos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(pnlEstadoDeSentencia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(pnlNivelDePeligrosidad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                .addContainerGap(320, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(19, 19, 19)
                 .addComponent(lblTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 532, Short.MAX_VALUE)
-                .addComponent(btnSalir)
-                .addGap(24, 24, 24))
+                .addGap(9, 9, 9)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(pnlNivelDePeligrosidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pnlEstadoDeSentencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pnlDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pnlIdentificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(rscFechaDeNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(rscFechaDeIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pnlReincidencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
         // TODO add your handling code here:
-        
-        //Fin del programa
-        System.exit(0);
-    }//GEN-LAST:event_btnSalirActionPerformed
+    }//GEN-LAST:event_txtNombreActionPerformed
+
+    private void txtDocumentoDeIdentidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDocumentoDeIdentidadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDocumentoDeIdentidadActionPerformed
 
     /**
      * @param args the command line arguments
@@ -114,7 +333,30 @@ public class GUIPreso extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnSalir;
+    private javax.swing.ButtonGroup btngDocumentoDeIdentidad;
+    private javax.swing.ButtonGroup btngReincidencia;
+    private javax.swing.JComboBox<String> cmbEstadoDeSentencia;
+    private javax.swing.JComboBox<String> cmbNivelDePeligrosidad;
+    private javax.swing.JLabel lblApellido;
+    private javax.swing.JLabel lblDelito;
+    private javax.swing.JLabel lblNacionalidad;
+    private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblTitulo;
+    private javax.swing.JPanel pnlDatos;
+    private javax.swing.JPanel pnlEstadoDeSentencia;
+    private javax.swing.JPanel pnlIdentificacion;
+    private javax.swing.JPanel pnlNivelDePeligrosidad;
+    private javax.swing.JPanel pnlReincidencia;
+    private javax.swing.JRadioButton rdbCedula;
+    private javax.swing.JRadioButton rdbNo;
+    private javax.swing.JRadioButton rdbPasaporte;
+    private javax.swing.JRadioButton rdbSi;
+    private rojeru_san.componentes.RSDateChooser rscFechaDeIngreso;
+    private rojeru_san.componentes.RSDateChooser rscFechaDeNacimiento;
+    private javax.swing.JTextField txtApellido;
+    private javax.swing.JTextField txtDelito;
+    private javax.swing.JTextField txtDocumentoDeIdentidad;
+    private javax.swing.JTextField txtNacionalidad;
+    private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }
