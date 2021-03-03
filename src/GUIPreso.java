@@ -166,8 +166,10 @@ public class GUIPreso extends javax.swing.JFrame {
 
         pnlReincidencia.setBorder(javax.swing.BorderFactory.createTitledBorder("Reincidencia"));
 
+        btngReincidencia.add(rdbSi);
         rdbSi.setText("SI");
 
+        btngReincidencia.add(rdbNo);
         rdbNo.setText("NO");
 
         javax.swing.GroupLayout pnlReincidenciaLayout = new javax.swing.GroupLayout(pnlReincidencia);

@@ -321,11 +321,17 @@
       <SubComponents>
         <Component class="javax.swing.JRadioButton" name="rdbSi">
           <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngReincidencia"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="SI"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JRadioButton" name="rdbNo">
           <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngReincidencia"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="NO"/>
           </Properties>
         </Component>
