@@ -1,3 +1,6 @@
+
+import java.util.Date;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -28,7 +31,7 @@ public class PresoPrisionPreventiva extends PresoRecienIngresado{
     public PresoPrisionPreventiva(String juezEncargado, int numeroDeIngreso, 
             String nombre, String apellido, 
             String nacionalidad, int documentoDeIdentidad,
-            String fechaDeNacimiento, String fechaDeIngreso, 
+            Date fechaDeNacimiento, Date fechaDeIngreso, 
             boolean reincidencia, boolean estadoDeSentencia, 
             int nivelDePeligrosidad, String delito) {
         

@@ -1,3 +1,6 @@
+
+import java.util.Date;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -36,7 +39,7 @@ public class PresoCumpliendoCondena extends Preso{
     //Constructor clase padre
     public PresoCumpliendoCondena(String nombre, String apellido, 
             String nacionalidad, int documentoDeIdentidad, 
-            String fechaDeNacimiento, String fechaDeIngreso, 
+            Date fechaDeNacimiento, Date fechaDeIngreso, 
             boolean reincidencia, boolean estadoDeSentencia, 
             int nivelDePeligrosidad, String delito) {
         super(nombre, apellido, nacionalidad, documentoDeIdentidad, 
@@ -47,8 +50,8 @@ public class PresoCumpliendoCondena extends Preso{
     //Constructor con datos
     public PresoCumpliendoCondena(String carcelAnterior, String motivo, 
             String nombre, String apellido, String nacionalidad, 
-            int documentoDeIdentidad, String fechaDeNacimiento, 
-            String fechaDeIngreso, boolean reincidencia,
+            int documentoDeIdentidad, Date fechaDeNacimiento, 
+            Date fechaDeIngreso, boolean reincidencia,
             boolean estadoDeSentencia, int nivelDePeligrosidad,
             String delito) {
         

@@ -71,8 +71,8 @@ public class PresoLibertadCondicional extends PresoProcesoLibertad {
     //Comstructor con datos
     public PresoLibertadCondicional(int tiempoRestante, String motivoLibCond,
             String nombre, String apellido, String nacionalidad,
-            int documentoDeIdentidad, String fechaDeNacimiento,
-            String fechaDeIngreso, boolean reincidencia,
+            int documentoDeIdentidad, Date fechaDeNacimiento,
+            Date fechaDeIngreso, boolean reincidencia,
             boolean estadoDeSentencia, int nivelDePeligrosidad, String delito) {
 
         super(nombre, apellido, nacionalidad,

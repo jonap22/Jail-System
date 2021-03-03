@@ -1,3 +1,6 @@
+
+import java.util.Date;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -11,7 +14,7 @@
 public class PresoProcesoLibertad extends Preso{
     //Variables
     private String juezEncargado;
-    private int fechaDeSolicitud;
+    private Date fechaDeSolicitud;
 
     //Métodos
     
@@ -20,7 +23,7 @@ public class PresoProcesoLibertad extends Preso{
         return juezEncargado;
     }
 
-    public int getFechadesolicitud() {
+    public Date getFechadesolicitud() {
         return fechaDeSolicitud;
     }
 
@@ -29,7 +32,7 @@ public class PresoProcesoLibertad extends Preso{
         this.juezEncargado = juezencargado;
     }
 
-    public void setFechadesolicitud(int fechadesolicitud) {
+    public void setFechadesolicitud(Date fechadesolicitud) {
         this.fechaDeSolicitud = fechadesolicitud;
     }
 
@@ -41,7 +44,7 @@ public class PresoProcesoLibertad extends Preso{
     //Constructor clase padre
     public PresoProcesoLibertad(String nombre, String apellido, 
             String nacionalidad, int documentoDeIdentidad, 
-            String fechaDeNacimiento, String fechaDeIngreso, 
+            Date fechaDeNacimiento, Date fechaDeIngreso, 
             boolean reincidencia, boolean estadoDeSentencia, 
             int nivelDePeligrosidad, String delito) {
         super(nombre, apellido, nacionalidad, 
@@ -51,10 +54,10 @@ public class PresoProcesoLibertad extends Preso{
     }
     
     //Constructor con datos
-    public PresoProcesoLibertad(String juezEncargado, int fechaDeSolicitud, 
+    public PresoProcesoLibertad(String juezEncargado, Date fechaDeSolicitud, 
             String nombre, String apellido, 
             String nacionalidad, int documentoDeIdentidad, 
-            String fechaDeNacimiento, String fechaDeIngreso, 
+            Date fechaDeNacimiento, Date fechaDeIngreso, 
             boolean reincidencia, boolean estadoDeSentencia, 
             int nivelDePeligrosidad, String delito) {
         

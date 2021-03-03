@@ -1,3 +1,6 @@
+
+import java.util.Date;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -10,25 +13,25 @@
  */
 public class PresoLibre extends PresoProcesoLibertad{
     //Variables
-    private String fechaDeSalida;
+    private Date fechaDeSalida;
     
     //Métodos
     
     //Get
-    public String getFechadesalida() {
+    public Date getFechadesalida() {
         return fechaDeSalida;
     }
     
     //Set
-    public void setFechadesalida(String fechadesalida) {
+    public void setFechadesalida(Date fechadesalida) {
         this.fechaDeSalida = fechadesalida;
     }
     
     //Constructor clase padre - hija
-    public PresoLibre(String fechaDeSalida, String juezEncargado, 
-            int fechaDeSolicitud, String nombre, String apellido,
+    public PresoLibre(Date fechaDeSalida, String juezEncargado, 
+            Date fechaDeSolicitud, String nombre, String apellido,
             String nacionalidad, int documentoDeIdentidad, 
-            String fechaDeNacimiento, String fechaDeIngreso, 
+            Date fechaDeNacimiento, Date fechaDeIngreso, 
             boolean reincidencia, boolean estadoDeSentencia, 
             int nivelDePeligrosidad, String delito) {
         
@@ -41,7 +44,7 @@ public class PresoLibre extends PresoProcesoLibertad{
     }
     
     //toString
-    public void setFechaDeSalida(String fechaDeSalida) {
+    public void setFechaDeSalida(Date fechaDeSalida) {
         this.fechaDeSalida = fechaDeSalida;
     }
     

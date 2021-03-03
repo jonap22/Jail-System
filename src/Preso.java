@@ -1,3 +1,6 @@
+
+import java.util.Date;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,8 +18,8 @@ public abstract class Preso {
     private String apellido;
     private String nacionalidad;
     private int documentoDeIdentidad;
-    private String fechaDeNacimiento;
-    private String fechaDeIngreso;
+    private Date fechaDeNacimiento;
+    private Date fechaDeIngreso;
     private boolean reincidencia;    
     private boolean estadoDeSentencia;
     private int nivelDePeligrosidad;
@@ -42,11 +45,11 @@ public abstract class Preso {
         return documentoDeIdentidad;
     }
 
-    public String getFechadenacimiento() {
+    public Date getFechadenacimiento() {
         return fechaDeNacimiento;
     }
 
-    public String getFechadeingreso() {
+    public Date getFechadeingreso() {
         return fechaDeIngreso;
     }
 
@@ -83,11 +86,11 @@ public abstract class Preso {
         this.documentoDeIdentidad = documentodeindentidad;
     }
 
-    public void setFechadenacimiento(String fechadenacimiento) {
+    public void setFechadenacimiento(Date fechadenacimiento) {
         this.fechaDeNacimiento = fechadenacimiento;
     }
 
-    public void setFechadeingreso(String fechadeingreso) {
+    public void setFechadeingreso(Date fechadeingreso) {
         this.fechaDeIngreso = fechadeingreso;
     }
 
@@ -109,8 +112,8 @@ public abstract class Preso {
     
     //Constructor
     public Preso(String nombre, String apellido, String nacionalidad, 
-            int documentoDeIdentidad, String fechaDeNacimiento, 
-            String fechaDeIngreso, boolean reincidencia, 
+            int documentoDeIdentidad, Date fechaDeNacimiento, 
+            Date fechaDeIngreso, boolean reincidencia, 
             boolean estadoDeSentencia, int nivelDePeligrosidad, String delito) {
         
         this.nombre = nombre;
