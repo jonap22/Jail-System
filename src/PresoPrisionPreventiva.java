@@ -16,7 +16,10 @@ public class PresoPrisionPreventiva extends PresoRecienIngresado{
     private String juezEncargado;
     
     //Métodos
-    
+    public String arresto(){
+    String nombre=super.getNombre();
+    return "El arresto se realizo al individuo "+nombre;
+    }
     //Get
     public String getJuezencargado() {
         return juezEncargado;

@@ -22,6 +22,7 @@ public class PresoLibertadCondicional extends PresoProcesoLibertad {
 
     //Métodos
     //provisional 
+    
     public int calculoTiempoRestante(Date fechaIngreso) {
         long tiempoFin, tiempoIngreso, dias;
         tiempoIngreso = fechaIngreso.getTime();
