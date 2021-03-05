@@ -1,4 +1,5 @@
 
+import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.JOptionPane;
 
@@ -16,6 +17,8 @@ public class GUIPreso extends javax.swing.JFrame {
     /**
      * Creates new form GUIMensaje
      */
+    Preso p1;
+    ArrayList<Preso> misPresos = new ArrayList();
     public GUIPreso() {
         initComponents();
     }
@@ -378,11 +381,17 @@ public class GUIPreso extends javax.swing.JFrame {
 
             switch (estadoDeSentencia) {
                 case "Prision Preventiva":
-
+                    String juezEncargadoLC =JOptionPane.showInputDialog(rootPane, 
+                    "Ingreso el nombre completo del encargado de dictar la prision "
+                            + "preventiva al sujeto ");
                 case "Condena Aplicada":
-
+                    double tiempoCondena=Integer.parseInt(JOptionPane.showInputDialog(rootPane, 
+                    "Ingrese el número de años que el preso fue condenado"));
+                    String juezEncargadoCA =JOptionPane.showInputDialog(rootPane, 
+                    "Ingreso el nombre completo del encargado de dictar la prision "
+                            + "preventiva al sujeto ");
                 case "En Ejecucion":
-
+                    
                 case "Proceso de Libertad Condicional":
 
                 case "Proceso de Libertad":
