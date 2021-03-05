@@ -36,7 +36,15 @@ public class PresoLibertadCondicional extends PresoProcesoLibertad {
     public String motivoLibCond(String motivoLibCond) {
         return "El motivo por el cual se le cede al preso el beneficio de la libertad condicional es el siguiente:" + motivoLibCond;
     }
-
+    public String arresto(){
+    String nombre=super.getNombre();
+    int cedula=super.getDocumentodeindentidad();
+    String delito=super.getDelito();
+    Date fechaIngreso=super.getFechadeingreso();
+    return "El arresto se realizo al individuo "+nombre+" con la cedula de identidad o"
+            + " documeto de identidad "+cedula+" por el delito de "+delito+", el individuo"
+            + " fue ingresado a un centro de reclucion la fecha"+fechaIngreso;
+    }
     //Get
     public String getMotivoLibCond() {
         return motivoLibCond;

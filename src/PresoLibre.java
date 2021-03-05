@@ -16,7 +16,15 @@ public class PresoLibre extends PresoProcesoLibertad{
     private Date fechaDeSalida;
     
     //Métodos
-    
+    public String arresto(){
+    String nombre=super.getNombre();
+    int cedula=super.getDocumentodeindentidad();
+    String delito=super.getDelito();
+    Date fechaIngreso=super.getFechadeingreso();
+    return "El arresto se realizo al individuo "+nombre+" con la cedula de identidad o"
+            + " documeto de identidad "+cedula+" por el delito de "+delito+", el individuo"
+            + " fue ingresado a un centro de reclucion la fecha"+fechaIngreso;
+    }
     //Get
     public Date getFechadesalida() {
         return fechaDeSalida;

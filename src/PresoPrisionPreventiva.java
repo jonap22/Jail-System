@@ -18,7 +18,12 @@ public class PresoPrisionPreventiva extends PresoRecienIngresado{
     //Métodos
     public String arresto(){
     String nombre=super.getNombre();
-    return "El arresto se realizo al individuo "+nombre;
+    int cedula=super.getDocumentodeindentidad();
+    String delito=super.getDelito();
+    Date fechaIngreso=super.getFechadeingreso();
+    return "El arresto se realizo al individuo "+nombre+" con la cedula de identidad o"
+            + " documeto de identidad "+cedula+" por el delito de "+delito+", el individuo"
+            + " fue ingresado a un centro de reclucion la fecha"+fechaIngreso;
     }
     //Get
     public String getJuezencargado() {

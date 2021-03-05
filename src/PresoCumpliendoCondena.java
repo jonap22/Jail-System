@@ -20,7 +20,15 @@ public class PresoCumpliendoCondena extends Preso{
     public String reasignacionCarcel(String carcelAnterior,String motivo){
     return "El preso se encontraba en la carcel "+carcelAnterior+" pero se lo va a reasignar a otro centro por el siguiente motivo:"+motivo;
     }
-    
+    public String arresto(){
+    String nombre=super.getNombre();
+    int cedula=super.getDocumentodeindentidad();
+    String delito=super.getDelito();
+    Date fechaIngreso=super.getFechadeingreso();
+    return "El arresto se realizo al individuo "+nombre+" con la cedula de identidad o"
+            + " documeto de identidad "+cedula+" por el delito de "+delito+", el individuo"
+            + " fue ingresado a un centro de reclucion la fecha"+fechaIngreso;
+    }
     //Get
     public String getCarcelanterior() {
         return carcelAnterior;
@@ -31,10 +39,7 @@ public class PresoCumpliendoCondena extends Preso{
         this.carcelAnterior = carcelanterior;
     }
 
-    @Override
-    protected String arresto() {
-        throw new UnsupportedOperationException("Not supported yet."); 
-    }
+    
     
     //Constructor clase padre
     public PresoCumpliendoCondena(String nombre, String apellido, 
