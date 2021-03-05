@@ -288,7 +288,7 @@ public class GUIPreso extends javax.swing.JFrame {
                         .addGap(147, 147, 147)
                         .addComponent(lblTitulo))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(205, 205, 205)
+                        .addGap(220, 220, 220)
                         .addComponent(jButton1)))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
@@ -317,7 +317,7 @@ public class GUIPreso extends javax.swing.JFrame {
                     .addComponent(rscFechaDeIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
-                .addContainerGap(117, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         pack();
@@ -341,7 +341,11 @@ public class GUIPreso extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         String cedula = txtDocumentoDeIdentidad.getText();
-
+//        try {
+//            
+//        } catch (Exception e) {
+//            JOptionPane.showMessageDialog(rootPane, "Ingrese datos va");
+//        }
         if (valida(cedula) == true) {
 
             String nombre = txtNombre.getText();
@@ -382,7 +386,6 @@ public class GUIPreso extends javax.swing.JFrame {
                 case "Proceso de Libertad Condicional":
 
                 case "Proceso de Libertad":
-
             }
 
         } else {
