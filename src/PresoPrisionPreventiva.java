@@ -40,7 +40,7 @@ public class PresoPrisionPreventiva extends PresoRecienIngresado{
             String nombre, String apellido, 
             String nacionalidad, int documentoDeIdentidad,
             Date fechaDeNacimiento, Date fechaDeIngreso, 
-            boolean reincidencia, boolean estadoDeSentencia, 
+            String reincidencia, String estadoDeSentencia, 
             int nivelDePeligrosidad, String delito) {
         
         super(numeroDeIngreso, nombre, 

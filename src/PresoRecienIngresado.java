@@ -34,7 +34,7 @@ public class PresoRecienIngresado extends Preso {
     public PresoRecienIngresado(String nombre, String apellido, 
             String nacionalidad, int documentoDeIdentidad, 
             Date fechaDeNacimiento, Date fechaDeIngreso,
-            boolean reincidencia, boolean estadoDeSentencia, 
+            String reincidencia, String estadoDeSentencia, 
             int nivelDePeligrosidad, String delito) {
         
         super(nombre, apellido, 
@@ -49,8 +49,8 @@ public class PresoRecienIngresado extends Preso {
     public PresoRecienIngresado(int numeroDeIngreso, String nombre, 
             String apellido, String nacionalidad, 
             int documentoDeIdentidad, Date fechaDeNacimiento, 
-            Date fechaDeIngreso, boolean reincidencia, 
-            boolean estadoDeSentencia, int nivelDePeligrosidad, 
+            Date fechaDeIngreso, String reincidencia, 
+            String estadoDeSentencia, int nivelDePeligrosidad, 
             String delito) {
         
         super(nombre, apellido, nacionalidad, 

@@ -1,4 +1,5 @@
 
+import java.util.Date;
 import javax.swing.JOptionPane;
 
 /*
@@ -30,6 +31,7 @@ public class GUIPreso extends javax.swing.JFrame {
 
         btngDocumentoDeIdentidad = new javax.swing.ButtonGroup();
         btngReincidencia = new javax.swing.ButtonGroup();
+        rSDateChooserBeanInfo1 = new rojeru_san.componentes.RSDateChooserBeanInfo();
         lblTitulo = new javax.swing.JLabel();
         pnlDatos = new javax.swing.JPanel();
         txtNombre = new javax.swing.JTextField();
@@ -53,8 +55,7 @@ public class GUIPreso extends javax.swing.JFrame {
         cmbNivelDePeligrosidad = new javax.swing.JComboBox<>();
         pnlEstadoDeSentencia = new javax.swing.JPanel();
         cmbEstadoDeSentencia = new javax.swing.JComboBox<>();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -141,6 +142,11 @@ public class GUIPreso extends javax.swing.JFrame {
                 txtDocumentoDeIdentidadActionPerformed(evt);
             }
         });
+        txtDocumentoDeIdentidad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDocumentoDeIdentidadKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlIdentificacionLayout = new javax.swing.GroupLayout(pnlIdentificacion);
         pnlIdentificacion.setLayout(pnlIdentificacionLayout);
@@ -199,6 +205,11 @@ public class GUIPreso extends javax.swing.JFrame {
         pnlNivelDePeligrosidad.setBorder(javax.swing.BorderFactory.createTitledBorder("Nivel De Peligrosidad"));
 
         cmbNivelDePeligrosidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "Baja", "Media", "Alta" }));
+        cmbNivelDePeligrosidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbNivelDePeligrosidadActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlNivelDePeligrosidadLayout = new javax.swing.GroupLayout(pnlNivelDePeligrosidad);
         pnlNivelDePeligrosidad.setLayout(pnlNivelDePeligrosidadLayout);
@@ -206,7 +217,7 @@ public class GUIPreso extends javax.swing.JFrame {
             pnlNivelDePeligrosidadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlNivelDePeligrosidadLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(cmbNivelDePeligrosidad, 0, 156, Short.MAX_VALUE)
+                .addComponent(cmbNivelDePeligrosidad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         pnlNivelDePeligrosidadLayout.setVerticalGroup(
@@ -219,7 +230,12 @@ public class GUIPreso extends javax.swing.JFrame {
 
         pnlEstadoDeSentencia.setBorder(javax.swing.BorderFactory.createTitledBorder("Estado De Sentencia"));
 
-        cmbEstadoDeSentencia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "Inicio", "Desarrollo", "Finalizado" }));
+        cmbEstadoDeSentencia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "Prision Preventiva", "Condena Aplicada", "En Ejecucion", "Proceso de Libertad Condicional", "Proceso de Libertad" }));
+        cmbEstadoDeSentencia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbEstadoDeSentenciaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlEstadoDeSentenciaLayout = new javax.swing.GroupLayout(pnlEstadoDeSentencia);
         pnlEstadoDeSentencia.setLayout(pnlEstadoDeSentenciaLayout);
@@ -238,43 +254,43 @@ public class GUIPreso extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+        jButton1.setText("GUARDAR");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(rscFechaDeIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addComponent(pnlIdentificacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(pnlDatos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(rscFechaDeNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                    .addComponent(pnlReincidencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(pnlNivelDePeligrosidad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(pnlEstadoDeSentencia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(315, Short.MAX_VALUE)
-                .addComponent(lblTitulo)
-                .addGap(307, 307, 307))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(pnlDatos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(rscFechaDeNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+                            .addComponent(pnlIdentificacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(35, 35, 35)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(pnlNivelDePeligrosidad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(pnlEstadoDeSentencia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(rscFechaDeIngreso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(7, 7, 7)
+                                .addComponent(pnlReincidencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(47, 47, 47))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(147, 147, 147)
+                        .addComponent(lblTitulo))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(205, 205, 205)
+                        .addComponent(jButton1)))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -283,23 +299,25 @@ public class GUIPreso extends javax.swing.JFrame {
                 .addComponent(lblTitulo)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(pnlDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(pnlIdentificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(rscFechaDeNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rscFechaDeIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(pnlReincidencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pnlDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(pnlNivelDePeligrosidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(pnlEstadoDeSentencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(pnlEstadoDeSentencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(pnlReincidencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(112, Short.MAX_VALUE))
+                        .addComponent(pnlIdentificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rscFechaDeNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rscFechaDeIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addContainerGap(117, Short.MAX_VALUE))
         );
 
         pack();
@@ -313,6 +331,76 @@ public class GUIPreso extends javax.swing.JFrame {
     private void txtDocumentoDeIdentidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDocumentoDeIdentidadActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDocumentoDeIdentidadActionPerformed
+
+    private void cmbEstadoDeSentenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbEstadoDeSentenciaActionPerformed
+        // TODO add your handling code here:     
+
+    }//GEN-LAST:event_cmbEstadoDeSentenciaActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+
+        String cedula = txtDocumentoDeIdentidad.getText();
+
+        if (valida(cedula) == true) {
+
+            String nombre = txtNombre.getText();
+            String apellido = txtApellido.getText();
+            String nacionalidad = txtNacionalidad.getText();
+            int documentoDeIdentidad = Integer.parseInt(cedula);
+            Date fechaDeNacimiento = rscFechaDeNacimiento.getDatoFecha();
+            Date fechaDeIngreso = rscFechaDeIngreso.getDatoFecha();
+            String delito = txtDelito.getText();
+
+            String reincidencia;
+            if (rdbSi.isSelected()) {
+                reincidencia = "SI";
+            } else {
+                reincidencia = "NO";
+            }
+
+            int nivelDePeligrosidad;
+            String peligrosidad = cmbNivelDePeligrosidad.getSelectedItem().toString();
+            switch (peligrosidad) {
+                case "Baja":
+                    nivelDePeligrosidad = 1;
+                case "Media":
+                    nivelDePeligrosidad = 2;
+                case "Alta":
+                    nivelDePeligrosidad = 3;
+            }
+
+            String estadoDeSentencia = cmbEstadoDeSentencia.getSelectedItem().toString();
+
+            switch (estadoDeSentencia) {
+                case "Prision Preventiva":
+
+                case "Condena Aplicada":
+
+                case "En Ejecucion":
+
+                case "Proceso de Libertad Condicional":
+
+                case "Proceso de Libertad":
+
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(null, "CEDULA INCORRECTA");
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void cmbNivelDePeligrosidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbNivelDePeligrosidadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbNivelDePeligrosidadActionPerformed
+
+    private void txtDocumentoDeIdentidadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDocumentoDeIdentidadKeyTyped
+        // TODO add your handling code here:
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9')) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtDocumentoDeIdentidadKeyTyped
 
     /**
      * @param args the command line arguments
@@ -350,13 +438,50 @@ public class GUIPreso extends javax.swing.JFrame {
         });
     }
 
+    public static boolean valida(String x) {
+        int suma = 0;
+        if (x.length() < 10) {
+            return false;
+        } else {
+            int a[] = new int[x.length() / 2];
+            int b[] = new int[(x.length() / 2)];
+            int c = 0;
+            int d = 1;
+            for (int i = 0; i < x.length() / 2; i++) {
+                a[i] = Integer.parseInt(String.valueOf(x.charAt(c)));
+                c = c + 2;
+                if (i < (x.length() / 2) - 1) {
+                    b[i] = Integer.parseInt(String.valueOf(x.charAt(d)));
+                    d = d + 2;
+                }
+            }
+
+            for (int i = 0; i < a.length; i++) {
+                a[i] = a[i] * 2;
+                if (a[i] > 9) {
+                    a[i] = a[i] - 9;
+                }
+                suma = suma + a[i] + b[i];
+            }
+            int aux = suma / 10;
+            int dec = (aux + 1) * 10;
+            if ((dec - suma) == Integer.parseInt(String.valueOf(x.charAt(x.length() - 1)))) {
+                return true;
+            } else if (suma % 10 == 0 && x.charAt(x.length() - 1) == '0') {
+                return true;
+            } else {
+                return false;
+            }
+
+        }
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup btngDocumentoDeIdentidad;
     private javax.swing.ButtonGroup btngReincidencia;
     private javax.swing.JComboBox<String> cmbEstadoDeSentencia;
     private javax.swing.JComboBox<String> cmbNivelDePeligrosidad;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel lblApellido;
     private javax.swing.JLabel lblDelito;
     private javax.swing.JLabel lblNacionalidad;
@@ -367,6 +492,7 @@ public class GUIPreso extends javax.swing.JFrame {
     private javax.swing.JPanel pnlIdentificacion;
     private javax.swing.JPanel pnlNivelDePeligrosidad;
     private javax.swing.JPanel pnlReincidencia;
+    private rojeru_san.componentes.RSDateChooserBeanInfo rSDateChooserBeanInfo1;
     private javax.swing.JRadioButton rdbCedula;
     private javax.swing.JRadioButton rdbNo;
     private javax.swing.JRadioButton rdbPasaporte;

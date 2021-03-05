@@ -40,7 +40,7 @@ public class PresoLibre extends PresoProcesoLibertad{
             Date fechaDeSolicitud, String nombre, String apellido,
             String nacionalidad, int documentoDeIdentidad, 
             Date fechaDeNacimiento, Date fechaDeIngreso, 
-            boolean reincidencia, boolean estadoDeSentencia, 
+            String reincidencia, String estadoDeSentencia, 
             int nivelDePeligrosidad, String delito) {
         
         super(juezEncargado, fechaDeSolicitud, nombre, 

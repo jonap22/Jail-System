@@ -20,8 +20,8 @@ public abstract class Preso {
     private int documentoDeIdentidad;
     private Date fechaDeNacimiento;
     private Date fechaDeIngreso;
-    private boolean reincidencia;    
-    private boolean estadoDeSentencia;
+    private String reincidencia;    
+    private String estadoDeSentencia;
     private int nivelDePeligrosidad;
     private String delito;
     
@@ -53,11 +53,11 @@ public abstract class Preso {
         return fechaDeIngreso;
     }
 
-    public boolean isReincidencia() {
+    public String getReincidencia() {
         return reincidencia;
     }
 
-    public boolean isEstadodesentecia() {
+    public String getEstadodesentecia() {
         return estadoDeSentencia;
     }
 
@@ -94,11 +94,11 @@ public abstract class Preso {
         this.fechaDeIngreso = fechadeingreso;
     }
 
-    public void setReincidencia(boolean reincidencia) {
+    public void setReincidencia(String reincidencia) {
         this.reincidencia = reincidencia;
     }
 
-    public void setEstadodesentecia(boolean estadodesentecia) {
+    public void setEstadodesentecia(String estadodesentecia) {
         this.estadoDeSentencia = estadodesentecia;
     }
 
@@ -113,8 +113,8 @@ public abstract class Preso {
     //Constructor
     public Preso(String nombre, String apellido, String nacionalidad, 
             int documentoDeIdentidad, Date fechaDeNacimiento, 
-            Date fechaDeIngreso, boolean reincidencia, 
-            boolean estadoDeSentencia, int nivelDePeligrosidad, String delito) {
+            Date fechaDeIngreso, String reincidencia, 
+            String estadoDeSentencia, int nivelDePeligrosidad, String delito) {
         
         this.nombre = nombre;
         this.apellido = apellido;
