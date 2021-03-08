@@ -30,7 +30,39 @@ public class GUIAutenticacion extends javax.swing.JFrame {
         txtPassword.setText("");
         txtUsuario.setText("");
     }
-    
+
+    //Método de autenticación
+    public void ingresar() {
+        //Variables
+        String usuario = txtUsuario.getText();
+        String password = txtPassword.getText();
+        int indexUser = 0;
+
+        //Se añade un usuario de prueba
+        usuarioExistente.add(0, "otame");
+        passwordExistente.add(0, "12345");
+
+        try {
+            //Index del array
+            indexUser = usuarioExistente.indexOf(usuario);
+
+            //Abrir la GUI Preso
+            if (usuario.equals(usuarioExistente.get(indexUser))
+                    && password.equals(passwordExistente.get(indexUser))) {
+
+                //Abre el sistema
+                GUIPreso open = new GUIPreso();
+                open.setVisible(true);
+
+                //Desaparece el sistema de autenticación
+                this.setVisible(false);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "Datos no existentes");
+        }
+
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -121,39 +153,17 @@ public class GUIAutenticacion extends javax.swing.JFrame {
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
         // TODO add your handling code here:
-
-        //Variables
-        String usuario = txtUsuario.getText();
-        String password = txtPassword.getText();
-        int indexUser = 0;
         
-        //Se añade un usuario de prueba
-        usuarioExistente.add(0, "jpuglla");
-        passwordExistente.add(0, "12345");
-
-        try {
-            //Index del array
-            indexUser = usuarioExistente.indexOf(usuario);
-            //Abrir la GUI Preso
-            if (usuario.equals(usuarioExistente.get(indexUser)) 
-                    && password.equals(passwordExistente.get(indexUser))) {
-                
-                //Abre el sistema
-                GUIPreso open = new GUIPreso();
-                open.setVisible(true);
-                
-                //Desaparece el sistema de autenticación
-                this.setVisible(false);
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(rootPane, "Datos no existentes");
-        }
-
+        //Método ingresar
+        ingresar();
 
     }//GEN-LAST:event_btnIngresarActionPerformed
 
     private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
         // TODO add your handling code here:
+        
+        //Método ingresar
+        ingresar();
     }//GEN-LAST:event_txtPasswordActionPerformed
 
     /**

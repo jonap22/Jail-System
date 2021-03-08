@@ -128,6 +128,9 @@ public abstract class Preso {
         this.delito = delito;
     }
     
+    public Preso() {
+        
+    }
     //toString
     @Override
     public String toString() {
