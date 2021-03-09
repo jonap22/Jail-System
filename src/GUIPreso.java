@@ -24,7 +24,7 @@ public class GUIPreso extends javax.swing.JFrame {
     public GUIPreso() {
         initComponents();
     }
-
+    
     public GUIPreso(ArrayList<Preso> misPresos) {
         initComponents();
         this.misPresos = misPresos;
@@ -40,7 +40,7 @@ public class GUIPreso extends javax.swing.JFrame {
         }
     }
     
-    public void limpiar () {
+    public void limpiar() {
         //Limpia los registros ingresados
         txtNombre.setText("");
         txtApellido.setText("");
@@ -111,8 +111,31 @@ public class GUIPreso extends javax.swing.JFrame {
                 txtNombreActionPerformed(evt);
             }
         });
+        txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombreKeyTyped(evt);
+            }
+        });
+
+        txtApellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtApellidoKeyTyped(evt);
+            }
+        });
+
+        txtNacionalidad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNacionalidadKeyTyped(evt);
+            }
+        });
 
         lblNombre.setText("Nombre");
+
+        txtDelito.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDelitoKeyTyped(evt);
+            }
+        });
 
         lblApellido.setText("Apellido");
 
@@ -426,7 +449,7 @@ public class GUIPreso extends javax.swing.JFrame {
         String juezEncargadoLC = "";
         double tiempoCondena = 0;
         String juezEncargadoCA = "";
-
+        
         try {
             if (valida(cedula) == true) {
                 //Datos
@@ -470,9 +493,9 @@ public class GUIPreso extends javax.swing.JFrame {
                                 "Ingreso el nombre completo del encargado de dictar la prision "
                                 + "preventiva al sujeto ");
                     case "En Ejecucion":
-
+                    
                     case "Proceso de Libertad Condicional":
-
+                    
                     case "Proceso de Libertad":
                 }
 
@@ -493,7 +516,7 @@ public class GUIPreso extends javax.swing.JFrame {
                 misPresos.add(p1);
                 GUIPreso preso = new GUIPreso(misPresos);
                 System.out.println(misPresos.get(misPresos.size() - 1).getNombre());
-
+                
             } else {
                 JOptionPane.showMessageDialog(null, "Cédula incorrecta");
             }
@@ -537,6 +560,46 @@ public class GUIPreso extends javax.swing.JFrame {
         limpiar();
     }//GEN-LAST:event_btnNuevoActionPerformed
 
+    private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (Character.isLowerCase(c)) {
+            String cad = ("" + c).toUpperCase();
+            c = cad.charAt(0);
+            evt.setKeyChar(c);
+        }
+    }//GEN-LAST:event_txtNombreKeyTyped
+
+    private void txtApellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidoKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (Character.isLowerCase(c)) {
+            String cad = ("" + c).toUpperCase();
+            c = cad.charAt(0);
+            evt.setKeyChar(c);
+        }
+    }//GEN-LAST:event_txtApellidoKeyTyped
+
+    private void txtNacionalidadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNacionalidadKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (Character.isLowerCase(c)) {
+            String cad = ("" + c).toUpperCase();
+            c = cad.charAt(0);
+            evt.setKeyChar(c);
+        }
+    }//GEN-LAST:event_txtNacionalidadKeyTyped
+
+    private void txtDelitoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDelitoKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (Character.isLowerCase(c)) {
+            String cad = ("" + c).toUpperCase();
+            c = cad.charAt(0);
+            evt.setKeyChar(c);
+        }
+    }//GEN-LAST:event_txtDelitoKeyTyped
+
     /**
      * @param args the command line arguments
      */
@@ -572,7 +635,7 @@ public class GUIPreso extends javax.swing.JFrame {
             }
         });
     }
-
+    
     public static boolean valida(String x) {
         int suma = 0;
         if (x.length() < 10) {
@@ -590,7 +653,7 @@ public class GUIPreso extends javax.swing.JFrame {
                     d = d + 2;
                 }
             }
-
+            
             for (int i = 0; i < a.length; i++) {
                 a[i] = a[i] * 2;
                 if (a[i] > 9) {
@@ -607,7 +670,7 @@ public class GUIPreso extends javax.swing.JFrame {
             } else {
                 return false;
             }
-
+            
         }
     }
 
