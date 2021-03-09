@@ -15,15 +15,45 @@ import javax.swing.table.DefaultTableModel;
  */
 public class GUIPreso extends javax.swing.JFrame {
 
-    /**
-     * Creates new form GUIMensaje
-     */
+    //Variables
     Preso p1;
-    public ArrayList<Preso> misPresos = new ArrayList();
-    DefaultTableModel dtmModeloTabla;
- 
+    ArrayList<Preso> misPresos = new ArrayList();
+    DefaultTableModel tablaInformacion;
+
+    //Constructores
     public GUIPreso() {
         initComponents();
+    }
+
+    public GUIPreso(ArrayList<Preso> misPresos) {
+        initComponents();
+        this.misPresos = misPresos;
+
+        //Variables
+        String mat[][] = new String[misPresos.size()][3];
+
+        //Presentación de datos
+        for (int i = 0; i < misPresos.size(); i++) {
+            mat[i][0] = String.valueOf(misPresos.get(i).getDocumentoDeIdentidad());
+            mat[i][1] = misPresos.get(i).getNombre();
+            mat[i][2] = misPresos.get(i).getApellido();
+        }
+    }
+    
+    public void limpiar () {
+        //Limpia los registros ingresados
+        txtNombre.setText("");
+        txtApellido.setText("");
+        txtNacionalidad.setText("");
+        txtDelito.setText("");
+        txtDocumentoDeIdentidad.setText("");
+        btgDocumentoDeIdentidad.clearSelection();
+        btgReincidencia.clearSelection();
+        cmbEstadoDeSentencia.setSelectedIndex(0);
+        cmbNivelDePeligrosidad.setSelectedIndex(0);
+        rscFechaDeIngreso.setDatoFecha(null);
+        rscFechaDeNacimiento.setDatoFecha(null);
+        
     }
 
     /**
@@ -35,8 +65,8 @@ public class GUIPreso extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btngDocumentoDeIdentidad = new javax.swing.ButtonGroup();
-        btngReincidencia = new javax.swing.ButtonGroup();
+        btgDocumentoDeIdentidad = new javax.swing.ButtonGroup();
+        btgReincidencia = new javax.swing.ButtonGroup();
         rSDateChooserBeanInfo1 = new rojeru_san.componentes.RSDateChooserBeanInfo();
         lblTitulo = new javax.swing.JLabel();
         pnlDatos = new javax.swing.JPanel();
@@ -61,7 +91,10 @@ public class GUIPreso extends javax.swing.JFrame {
         cmbNivelDePeligrosidad = new javax.swing.JComboBox<>();
         pnlEstadoDeSentencia = new javax.swing.JPanel();
         cmbEstadoDeSentencia = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        btnGuardar = new javax.swing.JButton();
+        btnDatos = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
+        btnNuevo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -137,10 +170,10 @@ public class GUIPreso extends javax.swing.JFrame {
 
         pnlIdentificacion.setBorder(javax.swing.BorderFactory.createTitledBorder("Identificación"));
 
-        btngDocumentoDeIdentidad.add(rdbCedula);
+        btgDocumentoDeIdentidad.add(rdbCedula);
         rdbCedula.setText("Cedula");
 
-        btngDocumentoDeIdentidad.add(rdbPasaporte);
+        btgDocumentoDeIdentidad.add(rdbPasaporte);
         rdbPasaporte.setText("Pasaporte");
 
         txtDocumentoDeIdentidad.addActionListener(new java.awt.event.ActionListener() {
@@ -171,20 +204,21 @@ public class GUIPreso extends javax.swing.JFrame {
         pnlIdentificacionLayout.setVerticalGroup(
             pnlIdentificacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlIdentificacionLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(pnlIdentificacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rdbCedula)
                     .addComponent(rdbPasaporte))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtDocumentoDeIdentidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtDocumentoDeIdentidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         pnlReincidencia.setBorder(javax.swing.BorderFactory.createTitledBorder("Reincidencia"));
 
-        btngReincidencia.add(rdbSi);
+        btgReincidencia.add(rdbSi);
         rdbSi.setText("SI");
 
-        btngReincidencia.add(rdbNo);
+        btgReincidencia.add(rdbNo);
         rdbNo.setText("NO");
 
         javax.swing.GroupLayout pnlReincidenciaLayout = new javax.swing.GroupLayout(pnlReincidencia);
@@ -192,11 +226,11 @@ public class GUIPreso extends javax.swing.JFrame {
         pnlReincidenciaLayout.setHorizontalGroup(
             pnlReincidenciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlReincidenciaLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(35, 35, 35)
                 .addComponent(rdbSi)
-                .addGap(12, 12, 12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(rdbNo)
-                .addContainerGap())
+                .addGap(39, 39, 39))
         );
         pnlReincidenciaLayout.setVerticalGroup(
             pnlReincidenciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -260,10 +294,31 @@ public class GUIPreso extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jButton1.setText("GUARDAR");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnGuardarActionPerformed(evt);
+            }
+        });
+
+        btnDatos.setText("Datos");
+        btnDatos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDatosActionPerformed(evt);
+            }
+        });
+
+        btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
+
+        btnNuevo.setText("Nuevo");
+        btnNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevoActionPerformed(evt);
             }
         });
 
@@ -275,21 +330,32 @@ public class GUIPreso extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(35, 35, 35)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnGuardar)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnNuevo)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnDatos)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnSalir))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(pnlDatos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(rscFechaDeNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
                                     .addComponent(pnlIdentificacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(35, 35, 35)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(pnlNivelDePeligrosidad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(pnlEstadoDeSentencia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(rscFechaDeIngreso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
-                                    .addComponent(pnlReincidencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(35, 35, 35)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(pnlNivelDePeligrosidad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(pnlEstadoDeSentencia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(pnlReincidencia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(rscFechaDeIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(169, 169, 169)
+                        .addGap(167, 167, 167)
                         .addComponent(lblTitulo)))
                 .addContainerGap(35, Short.MAX_VALUE))
         );
@@ -301,22 +367,26 @@ public class GUIPreso extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(pnlDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(pnlIdentificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(pnlNivelDePeligrosidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(pnlEstadoDeSentencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(pnlReincidencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(34, 34, 34)
+                        .addComponent(pnlReincidencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(pnlDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(pnlIdentificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rscFechaDeNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(rscFechaDeIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnGuardar)
+                    .addComponent(btnDatos)
+                    .addComponent(btnSalir)
+                    .addComponent(btnNuevo))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
@@ -336,67 +406,102 @@ public class GUIPreso extends javax.swing.JFrame {
 
     }//GEN-LAST:event_cmbEstadoDeSentenciaActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:
 
+        //Cédula
         String cedula = txtDocumentoDeIdentidad.getText();
-//        try {
-//            
-//        } catch (Exception e) {
-//            JOptionPane.showMessageDialog(rootPane, "Ingrese datos va");
-//        }
-        if (valida(cedula) == true) {
 
-            String nombre = txtNombre.getText();
-            String apellido = txtApellido.getText();
-            String nacionalidad = txtNacionalidad.getText();
-            int documentoDeIdentidad = Integer.parseInt(cedula);
-            Date fechaDeNacimiento = rscFechaDeNacimiento.getDatoFecha();
-            Date fechaDeIngreso = rscFechaDeIngreso.getDatoFecha();
-            String delito = txtDelito.getText();
+        //Variables
+        String nombre = "";
+        String apellido = "";
+        String nacionalidad = "";
+        int documentoDeIdentidad = 0;
+        String delito = "";
+        String reincidencia = "";
+        String estadoDeSentencia = "";
+        int nivelDePeligrosidad = 0;
 
-            String reincidencia;
-            if (rdbSi.isSelected()) {
-                reincidencia = "SI";
+        //Jueces
+        String juezEncargadoLC = "";
+        double tiempoCondena = 0;
+        String juezEncargadoCA = "";
+
+        try {
+            if (valida(cedula) == true) {
+                //Datos
+                nombre = txtNombre.getText();
+                apellido = txtApellido.getText();
+                nacionalidad = txtNacionalidad.getText();
+                documentoDeIdentidad = Integer.parseInt(cedula);
+                Date fechaDeNacimiento = rscFechaDeNacimiento.getDatoFecha();
+                Date fechaDeIngreso = rscFechaDeIngreso.getDatoFecha();
+                delito = txtDelito.getText();
+
+                //Reincidencia
+                if (rdbSi.isSelected()) {
+                    reincidencia = "SI";
+                } else {
+                    reincidencia = "NO";
+                }
+
+                //Nivel de peligrosidad
+                String peligrosidad = cmbNivelDePeligrosidad.getSelectedItem().toString();
+                switch (peligrosidad) {
+                    case "Baja":
+                        nivelDePeligrosidad = 1;
+                    case "Media":
+                        nivelDePeligrosidad = 2;
+                    case "Alta":
+                        nivelDePeligrosidad = 3;
+                }
+
+                //Estado de sentencia
+                estadoDeSentencia = cmbEstadoDeSentencia.getSelectedItem().toString();
+                switch (estadoDeSentencia) {
+                    case "Prision Preventiva":
+                        juezEncargadoLC = JOptionPane.showInputDialog(rootPane,
+                                "Ingreso el nombre completo del encargado de dictar la prision "
+                                + "preventiva al sujeto ");
+                    case "Condena Aplicada":
+                        tiempoCondena = Integer.parseInt(JOptionPane.showInputDialog(rootPane,
+                                "Ingrese el número de años que el preso fue condenado"));
+                        juezEncargadoCA = JOptionPane.showInputDialog(rootPane,
+                                "Ingreso el nombre completo del encargado de dictar la prision "
+                                + "preventiva al sujeto ");
+                    case "En Ejecucion":
+
+                    case "Proceso de Libertad Condicional":
+
+                    case "Proceso de Libertad":
+                }
+
+                //Creación de preso
+                p1 = new Preso(nombre, apellido, nacionalidad,
+                        documentoDeIdentidad, fechaDeNacimiento, fechaDeIngreso,
+                        reincidencia, estadoDeSentencia, nivelDePeligrosidad,
+                        delito) {
+                    @Override
+                    protected String arresto() {
+                        String arresto = "";
+                        arresto = "Motivo de arresto: ";
+                        return arresto;
+                    }
+                };
+
+                //Añadir p1 a misPresos
+                misPresos.add(p1);
+                GUIPreso preso = new GUIPreso(misPresos);
+                System.out.println(misPresos.get(misPresos.size() - 1).getNombre());
+
             } else {
-                reincidencia = "NO";
+                JOptionPane.showMessageDialog(null, "Cédula incorrecta");
             }
-
-            int nivelDePeligrosidad;
-            String peligrosidad = cmbNivelDePeligrosidad.getSelectedItem().toString();
-            switch (peligrosidad) {
-                case "Baja":
-                    nivelDePeligrosidad = 1;
-                case "Media":
-                    nivelDePeligrosidad = 2;
-                case "Alta":
-                    nivelDePeligrosidad = 3;
-            }
-
-            String estadoDeSentencia = cmbEstadoDeSentencia.getSelectedItem().toString();
-
-            switch (estadoDeSentencia) {
-                case "Prision Preventiva":
-                    String juezEncargadoLC = JOptionPane.showInputDialog(rootPane,
-                            "Ingreso el nombre completo del encargado de dictar la prision "
-                            + "preventiva al sujeto ");
-                case "Condena Aplicada":
-                    double tiempoCondena = Integer.parseInt(JOptionPane.showInputDialog(rootPane,
-                            "Ingrese el número de años que el preso fue condenado"));
-                    String juezEncargadoCA = JOptionPane.showInputDialog(rootPane,
-                            "Ingreso el nombre completo del encargado de dictar la prision "
-                            + "preventiva al sujeto ");
-                case "En Ejecucion":
-
-                case "Proceso de Libertad Condicional":
-
-                case "Proceso de Libertad":
-            }
-
-        } else {
-            JOptionPane.showMessageDialog(null, "CEDULA INCORRECTA");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "Ingrese datos válidos");
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void cmbNivelDePeligrosidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbNivelDePeligrosidadActionPerformed
         // TODO add your handling code here:
@@ -409,6 +514,28 @@ public class GUIPreso extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_txtDocumentoDeIdentidadKeyTyped
+
+    private void btnDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDatosActionPerformed
+        // TODO add your handling code here:
+
+        //Abre el sistema
+        GUIBusqueda search = new GUIBusqueda(misPresos);
+
+        //Desaparece el sistema de autenticación
+        search.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnDatosActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        // TODO add your handling code here:
+        //FIN
+        System.exit(0);
+    }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
+        // TODO add your handling code here:
+        limpiar();
+    }//GEN-LAST:event_btnNuevoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -485,11 +612,14 @@ public class GUIPreso extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup btngDocumentoDeIdentidad;
-    private javax.swing.ButtonGroup btngReincidencia;
+    private javax.swing.ButtonGroup btgDocumentoDeIdentidad;
+    private javax.swing.ButtonGroup btgReincidencia;
+    private javax.swing.JButton btnDatos;
+    private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnNuevo;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JComboBox<String> cmbEstadoDeSentencia;
     private javax.swing.JComboBox<String> cmbNivelDePeligrosidad;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel lblApellido;
     private javax.swing.JLabel lblDelito;
     private javax.swing.JLabel lblNacionalidad;

@@ -40,7 +40,7 @@ public class GUIAutenticacion extends javax.swing.JFrame {
 
         //Se añade un usuario de prueba
         usuarioExistente.add(0, "otame");
-        passwordExistente.add(0, "12345");
+        passwordExistente.add(0, "123");
 
         try {
             //Index del array
@@ -122,11 +122,11 @@ public class GUIAutenticacion extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(318, 318, 318)
-                        .addComponent(btnIngresar))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(326, 326, 326)
-                        .addComponent(lblIngreso)))
+                        .addComponent(lblIngreso))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(320, 320, 320)
+                        .addComponent(btnIngresar)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(

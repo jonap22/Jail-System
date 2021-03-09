@@ -29,6 +29,7 @@ public abstract class Preso {
     protected abstract String arresto();
     
     //Get
+
     public String getNombre() {
         return nombre;
     }
@@ -41,15 +42,15 @@ public abstract class Preso {
         return nacionalidad;
     }
 
-    public int getDocumentodeindentidad() {
+    public int getDocumentoDeIdentidad() {
         return documentoDeIdentidad;
     }
 
-    public Date getFechadenacimiento() {
+    public Date getFechaDeNacimiento() {
         return fechaDeNacimiento;
     }
 
-    public Date getFechadeingreso() {
+    public Date getFechaDeIngreso() {
         return fechaDeIngreso;
     }
 
@@ -57,11 +58,11 @@ public abstract class Preso {
         return reincidencia;
     }
 
-    public String getEstadodesentecia() {
+    public String getEstadoDeSentencia() {
         return estadoDeSentencia;
     }
 
-    public int getNiveldepeligrosidad() {
+    public int getNivelDePeligrosidad() {
         return nivelDePeligrosidad;
     }
 
@@ -71,6 +72,7 @@ public abstract class Preso {
     
     //Set
     public void setNombre(String nombre) {
+        
         this.nombre = nombre;
     }
 
@@ -82,40 +84,36 @@ public abstract class Preso {
         this.nacionalidad = nacionalidad;
     }
 
-    public void setDocumentodeindentidad(int documentodeindentidad) {
-        this.documentoDeIdentidad = documentodeindentidad;
+    public void setDocumentoDeIdentidad(int documentoDeIdentidad) {
+        this.documentoDeIdentidad = documentoDeIdentidad;
     }
 
-    public void setFechadenacimiento(Date fechadenacimiento) {
-        this.fechaDeNacimiento = fechadenacimiento;
+    public void setFechaDeNacimiento(Date fechaDeNacimiento) {
+        this.fechaDeNacimiento = fechaDeNacimiento;
     }
 
-    public void setFechadeingreso(Date fechadeingreso) {
-        this.fechaDeIngreso = fechadeingreso;
+    public void setFechaDeIngreso(Date fechaDeIngreso) {
+        this.fechaDeIngreso = fechaDeIngreso;
     }
 
     public void setReincidencia(String reincidencia) {
         this.reincidencia = reincidencia;
     }
 
-    public void setEstadodesentecia(String estadodesentecia) {
-        this.estadoDeSentencia = estadodesentecia;
+    public void setEstadoDeSentencia(String estadoDeSentencia) {
+        this.estadoDeSentencia = estadoDeSentencia;
     }
 
-    public void setNiveldepeligrosidad(int niveldepeligrosidad) {
-        this.nivelDePeligrosidad = niveldepeligrosidad;
+    public void setNivelDePeligrosidad(int nivelDePeligrosidad) {
+        this.nivelDePeligrosidad = nivelDePeligrosidad;
     }
 
     public void setDelito(String delito) {
         this.delito = delito;
     }
-    
+
     //Constructor
-    public Preso(String nombre, String apellido, String nacionalidad, 
-            int documentoDeIdentidad, Date fechaDeNacimiento, 
-            Date fechaDeIngreso, String reincidencia, 
-            String estadoDeSentencia, int nivelDePeligrosidad, String delito) {
-        
+    public Preso(String nombre, String apellido, String nacionalidad, int documentoDeIdentidad, Date fechaDeNacimiento, Date fechaDeIngreso, String reincidencia, String estadoDeSentencia, int nivelDePeligrosidad, String delito) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.nacionalidad = nacionalidad;
@@ -128,9 +126,6 @@ public abstract class Preso {
         this.delito = delito;
     }
     
-    public Preso() {
-        
-    }
     //toString
     @Override
     public String toString() {
