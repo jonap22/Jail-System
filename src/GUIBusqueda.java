@@ -223,30 +223,6 @@ public class GUIBusqueda extends javax.swing.JFrame {
                                 misPresos.get(i).arresto()}
                     );
                 }
-
-                //Switch que se encarga de la impresión de métodos de las subclases
-                if ("Condena Aplicada".equals(estadoDeSentencia)) {
-                    //Preso
-                    pca1 = ((PresoCondenaAplicada) misPresos.get(i));
-
-                    //Mensaje
-                    JOptionPane.showMessageDialog(rootPane,
-                            pca1.condenaAplicada(pca1.getTiempodecontena(), pca1.getJuezencargado()));
-                } else if ("En Ejecución".equals(estadoDeSentencia)) {
-                    //Preso
-                    pcc1 = ((PresoCumpliendoCondena) misPresos.get(i));
-
-                    //Mensaje
-                    JOptionPane.showMessageDialog(rootPane,
-                            pcc1.reasignacionCarcel(pcc1.getCarcelanterior(), pcc1.getMotivo()));
-                } else if ("Proceso de Libertad Condicional".equals(estadoDeSentencia)) {
-                    //Preso
-                    plc1 = ((PresoLibertadCondicional) misPresos.get(i));
-
-                    //Mensaje
-                    JOptionPane.showMessageDialog(rootPane,
-                            plc1.calculoTiempoRestante(plc1.getFechaDeIngreso()));
-                }
             }
 
         } catch (Exception e) {
