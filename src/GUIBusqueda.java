@@ -3,13 +3,12 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-
 public class GUIBusqueda extends javax.swing.JFrame {
 
     //Variables
     ArrayList<Preso> misPresos;
     DefaultTableModel tablaBusqueda;
-    
+
     //Método para la tabla de búsqueda
     public void tablaBusqueda() {
         tablaBusqueda = new DefaultTableModel();
@@ -22,16 +21,16 @@ public class GUIBusqueda extends javax.swing.JFrame {
         tablaBusqueda.addColumn("Descripcion del arresto");
         tblBusqueda.setModel(tablaBusqueda);
     }
-    
+
     //Constructores
     public GUIBusqueda() {
         initComponents();
     }
-    
+
     public GUIBusqueda(ArrayList<Preso> misPresos) {
         initComponents();
         tablaBusqueda();
-        
+
         //ArrayList misPresos
         this.misPresos = misPresos;
 
@@ -48,12 +47,12 @@ public class GUIBusqueda extends javax.swing.JFrame {
             mat[i][5] = Integer.toString(misPresos.get(i).getNivelDePeligrosidad());
             mat[i][6] = misPresos.get(i).arresto();
         }
-        
+
         tblInformacion.setModel(new javax.swing.table.DefaultTableModel(
-            mat,
-            new String [] {
-                "ID", "Nombre", "Apellido","Estado de sentencia","Delito","Nivel de peligrosidad","Descripcion del arresto"
-            }
+                mat,
+                new String[]{
+                    "ID", "Nombre", "Apellido", "Estado de sentencia", "Delito", "Nivel de peligrosidad", "Descripcion del arresto"
+                }
         ));
     }
 
@@ -197,16 +196,30 @@ public class GUIBusqueda extends javax.swing.JFrame {
         //Parámetros de búsqueda
         int idPreso = 0;
         tablaBusqueda();
-        
+        String condenaAplicada = "";
+
         try {
             idPreso = Integer.parseInt(txtBusqueda.getText());
 
             for (int i = 0; i < misPresos.size(); i++) {
                 if (misPresos.get(i).getDocumentoDeIdentidad() == idPreso) {
-                    tablaBusqueda.addRow(new Object[]{misPresos.get(i).getDocumentoDeIdentidad(), 
-                    misPresos.get(i).getNombre(), misPresos.get(i).getApellido(),misPresos.get(i).getEstadoDeSentencia(),
-                    misPresos.get(i).getDelito(),misPresos.get(i).getNivelDePeligrosidad(),misPresos.get(i).arresto()});
+                    tablaBusqueda.addRow(new Object[]{misPresos.get(i).getDocumentoDeIdentidad(),
+                        misPresos.get(i).getNombre(), misPresos.get(i).getApellido(), misPresos.get(i).getEstadoDeSentencia(),
+                        misPresos.get(i).getDelito(), misPresos.get(i).getNivelDePeligrosidad(), misPresos.get(i).arresto()});
+                   //switch que se encarga de la impresion de metodos de las subclases (no funciona xd xd xd xd )
+                    switch (misPresos.get(i).getEstadoDeSentencia()) {
+                        case "Condena Aplicada":
+                            JOptionPane.showMessageDialog(rootPane, ((PresoCondenaAplicada) misPresos.get(i)).condenaAplicada(((PresoCondenaAplicada) misPresos.get(i)).getTiempodecontena(), ((PresoCondenaAplicada) misPresos.get(i)).getJuezencargado()));
+                            break;
+                        case "En Ejecucion":
+                            JOptionPane.showMessageDialog(rootPane, ((PresoCumpliendoCondena) misPresos.get(i)).reasignacionCarcel(((PresoCumpliendoCondena) misPresos.get(i)).getCarcelanterior(), ((PresoCumpliendoCondena) misPresos.get(i)).getMotivo()));
+                            break;
+                        case "Proceso de Libertad Condicional":
+                            JOptionPane.showMessageDialog(rootPane, ((PresoLibertadCondicional) misPresos.get(i)).calculoTiempoRestante(((PresoLibertadCondicional) misPresos.get(i)).getFechaDeIngreso()));
+                            break;
+                    }
                 }
+
             }
 
         } catch (Exception e) {

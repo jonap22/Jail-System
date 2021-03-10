@@ -34,6 +34,11 @@ public class PresoCumpliendoCondena extends Preso{
     public String getCarcelanterior() {
         return carcelAnterior;
     }
+
+    public String getMotivo() {
+        return motivo;
+    }
+    
     
     //Set
     public void setCarcelanterior(String carcelanterior) {
