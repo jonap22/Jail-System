@@ -16,6 +16,10 @@ public class GUIBusqueda extends javax.swing.JFrame {
         tablaBusqueda.addColumn("ID");
         tablaBusqueda.addColumn("Nombre");
         tablaBusqueda.addColumn("Apellido");
+        tablaBusqueda.addColumn("Estado de sentencia");
+        tablaBusqueda.addColumn("Delito");
+        tablaBusqueda.addColumn("Nivel de peligrosidad");
+        tablaBusqueda.addColumn("Descripcion del arresto");
         tblBusqueda.setModel(tablaBusqueda);
     }
     
@@ -32,19 +36,23 @@ public class GUIBusqueda extends javax.swing.JFrame {
         this.misPresos = misPresos;
 
         //Variables
-        String mat[][] = new String[misPresos.size()][3];
+        String mat[][] = new String[misPresos.size()][7];
 
         //Presentación de datos
         for (int i = 0; i < misPresos.size(); i++) {
             mat[i][0] = String.valueOf(misPresos.get(i).getDocumentoDeIdentidad());
             mat[i][1] = misPresos.get(i).getNombre();
             mat[i][2] = misPresos.get(i).getApellido();
+            mat[i][3] = misPresos.get(i).getEstadoDeSentencia();
+            mat[i][4] = misPresos.get(i).getDelito();
+            mat[i][5] = Integer.toString(misPresos.get(i).getNivelDePeligrosidad());
+            mat[i][6] = misPresos.get(i).arresto();
         }
         
         tblInformacion.setModel(new javax.swing.table.DefaultTableModel(
             mat,
             new String [] {
-                "ID", "Nombre", "Apellido"
+                "ID", "Nombre", "Apellido","Estado de sentencia","Delito","Nivel de peligrosidad","Descripcion del arresto"
             }
         ));
     }
@@ -196,7 +204,8 @@ public class GUIBusqueda extends javax.swing.JFrame {
             for (int i = 0; i < misPresos.size(); i++) {
                 if (misPresos.get(i).getDocumentoDeIdentidad() == idPreso) {
                     tablaBusqueda.addRow(new Object[]{misPresos.get(i).getDocumentoDeIdentidad(), 
-                    misPresos.get(i).getNombre(), misPresos.get(i).getApellido()});
+                    misPresos.get(i).getNombre(), misPresos.get(i).getApellido(),misPresos.get(i).getEstadoDeSentencia(),
+                    misPresos.get(i).getDelito(),misPresos.get(i).getNivelDePeligrosidad(),misPresos.get(i).arresto()});
                 }
             }
 

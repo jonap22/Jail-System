@@ -23,7 +23,8 @@ public class PresoPrisionPreventiva extends PresoRecienIngresado{
     Date fechaIngreso=super.getFechaDeIngreso();
     return "El arresto se realizo al individuo "+nombre+" con la cedula de identidad o"
             + " documeto de identidad "+cedula+" por el delito de "+delito+", el individuo"
-            + " fue ingresado a un centro de reclucion la fecha"+fechaIngreso;
+            + " fue ingresado a un centro de reclucion la fecha"+fechaIngreso+" el sujeto se"
+            + " encuentra por el momento de prision preventiva en espera de su sentencia";
     }
     //Get
     public String getJuezencargado() {

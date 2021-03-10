@@ -27,7 +27,8 @@ public class PresoCumpliendoCondena extends Preso{
     Date fechaIngreso=super.getFechaDeIngreso();
     return "El arresto se realizo al individuo "+nombre+" con la cedula de identidad o"
             + " documeto de identidad "+cedula+" por el delito de "+delito+", el individuo"
-            + " fue ingresado a un centro de reclucion la fecha"+fechaIngreso;
+            + " fue ingresado a un centro de reclucion la fecha"+fechaIngreso+" el sujeto "
+            + "se encuentra cumpliendo condena.";
     }
     //Get
     public String getCarcelanterior() {
@@ -38,9 +39,6 @@ public class PresoCumpliendoCondena extends Preso{
     public void setCarcelanterior(String carcelanterior) {
         this.carcelAnterior = carcelanterior;
     }
-
-    
-    
     //Constructor clase padre
     public PresoCumpliendoCondena(String nombre, String apellido, 
             String nacionalidad, int documentoDeIdentidad, 

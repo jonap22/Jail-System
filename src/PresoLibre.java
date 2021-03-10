@@ -13,7 +13,7 @@ import java.util.Date;
  */
 public class PresoLibre extends PresoProcesoLibertad{
     //Variables
-    private Date fechaDeSalida;
+    
     
     //Métodos
     public String arresto(){
@@ -23,37 +23,28 @@ public class PresoLibre extends PresoProcesoLibertad{
     Date fechaIngreso=super.getFechaDeIngreso();
     return "El arresto se realizo al individuo "+nombre+" con la cedula de identidad o"
             + " documeto de identidad "+cedula+" por el delito de "+delito+", el individuo"
-            + " fue ingresado a un centro de reclucion la fecha"+fechaIngreso;
+            + " fue ingresado a un centro de reclucion la fecha "+fechaIngreso+" en la actualidad"
+            + " el sujeto se encuentra en libertad";
     }
     //Get
-    public Date getFechadesalida() {
-        return fechaDeSalida;
-    }
-    
-    //Set
-    public void setFechadesalida(Date fechadesalida) {
-        this.fechaDeSalida = fechadesalida;
-    }
+  
     
     //Constructor clase padre - hija
-    public PresoLibre(Date fechaDeSalida, String juezEncargado, 
-            Date fechaDeSolicitud, String nombre, String apellido,
+    public PresoLibre(String nombre, String apellido,
             String nacionalidad, int documentoDeIdentidad, 
             Date fechaDeNacimiento, Date fechaDeIngreso, 
             String reincidencia, String estadoDeSentencia, 
             int nivelDePeligrosidad, String delito) {
         
-        super(juezEncargado, fechaDeSolicitud, nombre, 
+        super(nombre, 
                 apellido, nacionalidad, documentoDeIdentidad, 
                 fechaDeNacimiento, fechaDeIngreso, reincidencia, 
                 estadoDeSentencia, nivelDePeligrosidad, delito);
         
-        this.fechaDeSalida = fechaDeSalida;
+       
     }
     
     //toString
-    public void setFechaDeSalida(Date fechaDeSalida) {
-        this.fechaDeSalida = fechaDeSalida;
-    }
+    
     
 }

@@ -17,7 +17,7 @@ import java.util.GregorianCalendar;
 public class PresoLibertadCondicional extends PresoProcesoLibertad {
 
     //Variables
-    private int tiempoRestante;
+    
     private String motivoLibCond;
 
     //Métodos
@@ -30,12 +30,9 @@ public class PresoLibertadCondicional extends PresoProcesoLibertad {
         tiempoFin = fechaActual.getTime();
         dias = (tiempoFin - tiempoIngreso) / (1000 * 60 * 60 * 24);
         return (int) dias;
-
     }
 
-    public String motivoLibCond(String motivoLibCond) {
-        return "El motivo por el cual se le cede al preso el beneficio de la libertad condicional es el siguiente:" + motivoLibCond;
-    }
+   
     public String arresto(){
     String nombre=super.getNombre();
     int cedula=super.getDocumentoDeIdentidad();
@@ -43,28 +40,23 @@ public class PresoLibertadCondicional extends PresoProcesoLibertad {
     Date fechaIngreso=super.getFechaDeIngreso();
     return "El arresto se realizo al individuo "+nombre+" con la cedula de identidad o"
             + " documeto de identidad "+cedula+" por el delito de "+delito+", el individuo"
-            + " fue ingresado a un centro de reclucion la fecha"+fechaIngreso;
+            + " fue ingresado a un centro de reclucion la fecha"+fechaIngreso+" en la actualidad"
+            + " el sujeto se encuentra en libertad condicional.";
     }
     //Get
     public String getMotivoLibCond() {
         return motivoLibCond;
     }
 
-    public int getTiemporestante() {
-        return tiempoRestante;
-    }
-
-    //Set
+       //Set
     public void setMotivoLibCond(String motivoLibCond) {
         this.motivoLibCond = motivoLibCond;
     }
 
-    public void setTiemporestante(int tiemporestante) {
-        this.tiempoRestante = tiemporestante;
-    }
+    
 
     //Comstructor con datos
-    public PresoLibertadCondicional(int tiempoRestante, String motivoLibCond,
+    public PresoLibertadCondicional(String motivoLibCond,
             String nombre, String apellido, String nacionalidad,
             int documentoDeIdentidad, Date fechaDeNacimiento,
             Date fechaDeIngreso, String reincidencia,
@@ -74,15 +66,13 @@ public class PresoLibertadCondicional extends PresoProcesoLibertad {
                 documentoDeIdentidad, fechaDeNacimiento,
                 fechaDeIngreso, reincidencia,
                 estadoDeSentencia, nivelDePeligrosidad, delito);
-        this.tiempoRestante = tiempoRestante;
-        this.motivoLibCond = motivoLibCond;
+         this.motivoLibCond = motivoLibCond;
     }
 
     //toString
     @Override
     public String toString() {
-        return "PresoLibertadCondicional{" + "tiempoRestante=" + tiempoRestante
-                + ", motivoLibCond=" + motivoLibCond + '}';
+        return "PresoLibertadCondicional{" + ", motivoLibCond=" + motivoLibCond + '}';
     }
 
 }

@@ -30,13 +30,18 @@ public class GUIPreso extends javax.swing.JFrame {
         this.misPresos = misPresos;
 
         //Variables
-        String mat[][] = new String[misPresos.size()][3];
+        String mat[][] = new String[misPresos.size()][7];
 
         //Presentación de datos
         for (int i = 0; i < misPresos.size(); i++) {
             mat[i][0] = String.valueOf(misPresos.get(i).getDocumentoDeIdentidad());
             mat[i][1] = misPresos.get(i).getNombre();
             mat[i][2] = misPresos.get(i).getApellido();
+            mat[i][3] = misPresos.get(i).getEstadoDeSentencia();
+            mat[i][4] = misPresos.get(i).getDelito();
+            mat[i][5] = Integer.toString(misPresos.get(i).getNivelDePeligrosidad());
+            mat[i][6] = misPresos.get(i).arresto();
+
         }
     }
 
@@ -444,11 +449,14 @@ public class GUIPreso extends javax.swing.JFrame {
         String reincidencia = "";
         String estadoDeSentencia = "";
         int nivelDePeligrosidad = 0;
-
+        int numeroDeIngreso = 0;
         //Jueces
         String juezEncargadoLC = "";
         double tiempoCondena = 0;
         String juezEncargadoCA = "";
+        String carcelAnterior = "";
+        String motivo = "";
+        String motivoLibertadC = "";
 
         try {
             if (valida(cedula) == true) {
@@ -460,6 +468,7 @@ public class GUIPreso extends javax.swing.JFrame {
                 Date fechaDeNacimiento = rscFechaDeNacimiento.getDatoFecha();
                 Date fechaDeIngreso = rscFechaDeIngreso.getDatoFecha();
                 delito = txtDelito.getText();
+                numeroDeIngreso = documentoDeIdentidad + 1;
 
                 //Datos vacíos
                 if ((cmbEstadoDeSentencia.getSelectedIndex() != 0)
@@ -478,10 +487,13 @@ public class GUIPreso extends javax.swing.JFrame {
                     switch (peligrosidad) {
                         case "Baja":
                             nivelDePeligrosidad = 1;
+                            break;
                         case "Media":
                             nivelDePeligrosidad = 2;
+                            break;                            
                         case "Alta":
                             nivelDePeligrosidad = 3;
+                            break;
                     }
 
                     //Estado de sentencia
@@ -490,33 +502,53 @@ public class GUIPreso extends javax.swing.JFrame {
                         case "Prision Preventiva":
                             juezEncargadoLC = JOptionPane.showInputDialog(rootPane,
                                     "Ingreso el nombre completo del encargado de dictar la prision "
-                                    + "preventiva al sujeto ");
+                                    + "preventiva al sujeto: ");
+                            break;
                         case "Condena Aplicada":
                             tiempoCondena = Integer.parseInt(JOptionPane.showInputDialog(rootPane,
-                                    "Ingrese el número de años que el preso fue condenado"));
+                                    "Ingrese el número de años que el preso fue condenado:"));
                             juezEncargadoCA = JOptionPane.showInputDialog(rootPane,
                                     "Ingreso el nombre completo del encargado de dictar la prision "
-                                    + "preventiva al sujeto ");
+                                    + "preventiva al sujeto :");
+                            break;
                         case "En Ejecucion":
-
+                            carcelAnterior = JOptionPane.showInputDialog(rootPane,
+                                    "Ingreso el nombre del anterior centro de reclusion donde el "
+                                    + "sujeto es encontraba: ");
+                            motivo = JOptionPane.showInputDialog(rootPane,
+                                    "Ingreso el motivo por el cual al sujeto se lo va a "
+                                    + "reubicar en un nuevo centro de reclusion: ");
+                            break;
                         case "Proceso de Libertad Condicional":
-
-                        case "Proceso de Libertad":
+                            motivoLibertadC = JOptionPane.showInputDialog(rootPane,
+                                    "Ingreso el motivo por el cual al sujeto se le dio "
+                                    + "el privilegio de obtener la libertad condicional: ");
+                            break;
                     }
-
                     //Creación de preso
-                    p1 = new Preso(nombre, apellido, nacionalidad,
-                            documentoDeIdentidad, fechaDeNacimiento, fechaDeIngreso,
-                            reincidencia, estadoDeSentencia, nivelDePeligrosidad,
-                            delito) {
-                        @Override
-                        protected String arresto() {
-                            String arresto = "";
-                            arresto = "Motivo de arresto: ";
-                            return arresto;
-                        }
-                    };
-
+                    switch (estadoDeSentencia) {
+                        case "Prision Preventiva":
+                            p1 = new PresoPrisionPreventiva(juezEncargadoLC, numeroDeIngreso, nombre, apellido, nacionalidad, documentoDeIdentidad, fechaDeNacimiento, fechaDeIngreso, reincidencia, estadoDeSentencia, nivelDePeligrosidad, delito);
+                        case "Condena Aplicada":
+                            p1 = new PresoCondenaAplicada(tiempoCondena, juezEncargadoCA, nombre, apellido, nacionalidad, documentoDeIdentidad, fechaDeNacimiento, fechaDeIngreso, reincidencia, estadoDeSentencia, nivelDePeligrosidad, delito);
+                        case "En Ejecucion":
+                            p1 = new PresoCumpliendoCondena(carcelAnterior, motivo, nombre, apellido, nacionalidad, documentoDeIdentidad, fechaDeNacimiento, fechaDeIngreso, reincidencia, estadoDeSentencia, nivelDePeligrosidad, delito);
+                        case "Proceso de Libertad Condicional":
+                            p1 = new PresoLibertadCondicional(motivoLibertadC, nombre, apellido, nacionalidad, documentoDeIdentidad, fechaDeNacimiento, fechaDeIngreso, reincidencia, estadoDeSentencia, nivelDePeligrosidad, delito);
+                        case "Proceso de Libertad":
+                            p1 = new PresoLibre(nombre, apellido, nacionalidad, documentoDeIdentidad, fechaDeNacimiento, fechaDeIngreso, reincidencia, estadoDeSentencia, nivelDePeligrosidad, delito);
+                        /*p1 = new Preso(nombre, apellido, nacionalidad,
+                                    documentoDeIdentidad, fechaDeNacimiento, fechaDeIngreso,
+                                    reincidencia, estadoDeSentencia, nivelDePeligrosidad,
+                                    delito) {
+                                @Override
+                                protected String arresto() {
+                                    String arresto = "";
+                                    arresto = "Motivo de arresto: ";
+                                    return arresto;
+                                }
+                            };*/
+                    }
                     //Añadir p1 a misPresos
                     misPresos.add(p1);
                     GUIPreso preso = new GUIPreso(misPresos);
