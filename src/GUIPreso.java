@@ -298,7 +298,7 @@ public class GUIPreso extends javax.swing.JFrame {
 
         pnlEstadoDeSentencia.setBorder(javax.swing.BorderFactory.createTitledBorder("Estado De Sentencia"));
 
-        cmbEstadoDeSentencia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "Prision Preventiva", "Condena Aplicada", "En Ejecucion", "Proceso de Libertad Condicional", "Proceso de Libertad" }));
+        cmbEstadoDeSentencia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "Prisión Preventiva", "Condena Aplicada", "En Ejecución", "Proceso de Libertad Condicional", "Proceso de Libertad" }));
         cmbEstadoDeSentencia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbEstadoDeSentenciaActionPerformed(evt);
@@ -499,9 +499,9 @@ public class GUIPreso extends javax.swing.JFrame {
                     //Estado de sentencia
                     estadoDeSentencia = cmbEstadoDeSentencia.getSelectedItem().toString();
                     switch (estadoDeSentencia) {
-                        case "Prision Preventiva":
+                        case "Prisión Preventiva":
                             juezEncargadoLC = JOptionPane.showInputDialog(rootPane,
-                                    "Ingreso el nombre completo del encargado de dictar la prision "
+                                    "Ingrese el nombre completo del encargado de dictar la prisión "
                                     + "preventiva al sujeto: ");
                             break;
                         case "Condena Aplicada":
@@ -511,27 +511,27 @@ public class GUIPreso extends javax.swing.JFrame {
                                     "Ingreso el nombre completo del encargado de dictar la prision "
                                     + "preventiva al sujeto :");
                             break;
-                        case "En Ejecucion":
+                        case "En Ejecución":
                             carcelAnterior = JOptionPane.showInputDialog(rootPane,
-                                    "Ingreso el nombre del anterior centro de reclusion donde el "
+                                    "Ingrese el nombre del anterior centro de reclusión donde el "
                                     + "sujeto es encontraba: ");
                             motivo = JOptionPane.showInputDialog(rootPane,
-                                    "Ingreso el motivo por el cual al sujeto se lo va a "
-                                    + "reubicar en un nuevo centro de reclusion: ");
+                                    "Ingrese el motivo por el cual al sujeto se lo va a "
+                                    + "reubicar en un nuevo centro de reclusión: ");
                             break;
                         case "Proceso de Libertad Condicional":
                             motivoLibertadC = JOptionPane.showInputDialog(rootPane,
-                                    "Ingreso el motivo por el cual al sujeto se le dio "
+                                    "Ingrese el motivo por el cual al sujeto se le dio "
                                     + "el privilegio de obtener la libertad condicional: ");
                             break;
                     }
                     //Creación de preso
                     switch (estadoDeSentencia) {
-                        case "Prision Preventiva":
+                        case "Prisión Preventiva":
                             p1 = new PresoPrisionPreventiva(juezEncargadoLC, numeroDeIngreso, nombre, apellido, nacionalidad, documentoDeIdentidad, fechaDeNacimiento, fechaDeIngreso, reincidencia, estadoDeSentencia, nivelDePeligrosidad, delito);
                         case "Condena Aplicada":
                             p1 = new PresoCondenaAplicada(tiempoCondena, juezEncargadoCA, nombre, apellido, nacionalidad, documentoDeIdentidad, fechaDeNacimiento, fechaDeIngreso, reincidencia, estadoDeSentencia, nivelDePeligrosidad, delito);
-                        case "En Ejecucion":
+                        case "En Ejecución":
                             p1 = new PresoCumpliendoCondena(carcelAnterior, motivo, nombre, apellido, nacionalidad, documentoDeIdentidad, fechaDeNacimiento, fechaDeIngreso, reincidencia, estadoDeSentencia, nivelDePeligrosidad, delito);
                         case "Proceso de Libertad Condicional":
                             p1 = new PresoLibertadCondicional(motivoLibertadC, nombre, apellido, nacionalidad, documentoDeIdentidad, fechaDeNacimiento, fechaDeIngreso, reincidencia, estadoDeSentencia, nivelDePeligrosidad, delito);

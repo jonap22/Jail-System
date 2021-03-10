@@ -18,7 +18,7 @@ public class GUIBusqueda extends javax.swing.JFrame {
         tablaBusqueda.addColumn("Estado de sentencia");
         tablaBusqueda.addColumn("Delito");
         tablaBusqueda.addColumn("Nivel de peligrosidad");
-        tablaBusqueda.addColumn("Descripcion del arresto");
+        tablaBusqueda.addColumn("Descripción del arresto");
         tblBusqueda.setModel(tablaBusqueda);
     }
 
@@ -51,7 +51,8 @@ public class GUIBusqueda extends javax.swing.JFrame {
         tblInformacion.setModel(new javax.swing.table.DefaultTableModel(
                 mat,
                 new String[]{
-                    "ID", "Nombre", "Apellido", "Estado de sentencia", "Delito", "Nivel de peligrosidad", "Descripcion del arresto"
+                    "ID", "Nombre", "Apellido", "Estado de sentencia",
+                    "Delito", "Nivel de peligrosidad", "Descripción del arresto"
                 }
         ));
     }
@@ -196,30 +197,56 @@ public class GUIBusqueda extends javax.swing.JFrame {
         //Parámetros de búsqueda
         int idPreso = 0;
         tablaBusqueda();
-        String condenaAplicada = "";
+        PresoCondenaAplicada pca1;
+        PresoCumpliendoCondena pcc1;
+        PresoLibertadCondicional plc1;
+        String estadoDeSentencia = "";
 
         try {
+            //Identificación del preso
             idPreso = Integer.parseInt(txtBusqueda.getText());
 
             for (int i = 0; i < misPresos.size(); i++) {
+                //Estado de sentencia
+                estadoDeSentencia = misPresos.get(i).getEstadoDeSentencia();
+
                 if (misPresos.get(i).getDocumentoDeIdentidad() == idPreso) {
-                    tablaBusqueda.addRow(new Object[]{misPresos.get(i).getDocumentoDeIdentidad(),
-                        misPresos.get(i).getNombre(), misPresos.get(i).getApellido(), misPresos.get(i).getEstadoDeSentencia(),
-                        misPresos.get(i).getDelito(), misPresos.get(i).getNivelDePeligrosidad(), misPresos.get(i).arresto()});
-                   //switch que se encarga de la impresion de metodos de las subclases (no funciona xd xd xd xd )
-                    switch (misPresos.get(i).getEstadoDeSentencia()) {
-                        case "Condena Aplicada":
-                            JOptionPane.showMessageDialog(rootPane, ((PresoCondenaAplicada) misPresos.get(i)).condenaAplicada(((PresoCondenaAplicada) misPresos.get(i)).getTiempodecontena(), ((PresoCondenaAplicada) misPresos.get(i)).getJuezencargado()));
-                            break;
-                        case "En Ejecucion":
-                            JOptionPane.showMessageDialog(rootPane, ((PresoCumpliendoCondena) misPresos.get(i)).reasignacionCarcel(((PresoCumpliendoCondena) misPresos.get(i)).getCarcelanterior(), ((PresoCumpliendoCondena) misPresos.get(i)).getMotivo()));
-                            break;
-                        case "Proceso de Libertad Condicional":
-                            JOptionPane.showMessageDialog(rootPane, ((PresoLibertadCondicional) misPresos.get(i)).calculoTiempoRestante(((PresoLibertadCondicional) misPresos.get(i)).getFechaDeIngreso()));
-                            break;
-                    }
+                    //Tabla de búsqueda
+                    tablaBusqueda.addRow(
+                            new Object[]{
+                                misPresos.get(i).getDocumentoDeIdentidad(),
+                                misPresos.get(i).getNombre(),
+                                misPresos.get(i).getApellido(),
+                                misPresos.get(i).getEstadoDeSentencia(),
+                                misPresos.get(i).getDelito(),
+                                misPresos.get(i).getNivelDePeligrosidad(),
+                                misPresos.get(i).arresto()}
+                    );
                 }
 
+                //Switch que se encarga de la impresión de métodos de las subclases
+                if ("Condena Aplicada".equals(estadoDeSentencia)) {
+                    //Preso
+                    pca1 = ((PresoCondenaAplicada) misPresos.get(i));
+
+                    //Mensaje
+                    JOptionPane.showMessageDialog(rootPane,
+                            pca1.condenaAplicada(pca1.getTiempodecontena(), pca1.getJuezencargado()));
+                } else if ("En Ejecución".equals(estadoDeSentencia)) {
+                    //Preso
+                    pcc1 = ((PresoCumpliendoCondena) misPresos.get(i));
+
+                    //Mensaje
+                    JOptionPane.showMessageDialog(rootPane,
+                            pcc1.reasignacionCarcel(pcc1.getCarcelanterior(), pcc1.getMotivo()));
+                } else if ("Proceso de Libertad Condicional".equals(estadoDeSentencia)) {
+                    //Preso
+                    plc1 = ((PresoLibertadCondicional) misPresos.get(i));
+
+                    //Mensaje
+                    JOptionPane.showMessageDialog(rootPane,
+                            plc1.calculoTiempoRestante(plc1.getFechaDeIngreso()));
+                }
             }
 
         } catch (Exception e) {
