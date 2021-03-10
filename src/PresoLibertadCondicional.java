@@ -17,43 +17,43 @@ import java.util.GregorianCalendar;
 public class PresoLibertadCondicional extends PresoProcesoLibertad {
 
     //Variables
-    
     private String motivoLibCond;
 
     //Métodos
     //provisional 
-    
-    public int calculoTiempoRestante(Date fechaIngreso) {
+    public String calculoTiempoRestante(Date fechaIngreso) {
+        //Variables locales
         long tiempoFin, tiempoIngreso, dias;
         tiempoIngreso = fechaIngreso.getTime();
         Date fechaActual = new Date();
         tiempoFin = fechaActual.getTime();
+
+        //Cálculo de días restantes
         dias = (tiempoFin - tiempoIngreso) / (1000 * 60 * 60 * 24);
-        return (int) dias;
+
+        return "El tiempo restante de la condena es " + dias + "días";
     }
 
-   
-    public String arresto(){
-    String nombre=super.getNombre();
-    int cedula=super.getDocumentoDeIdentidad();
-    String delito=super.getDelito();
-    Date fechaIngreso=super.getFechaDeIngreso();
-    return "El arresto se realizo al individuo "+nombre+" con la cedula de identidad o"
-            + " documeto de identidad "+cedula+" por el delito de "+delito+", el individuo"
-            + " fue ingresado a un centro de reclucion la fecha"+fechaIngreso+" en la actualidad"
-            + " el sujeto se encuentra en libertad condicional.";
+    public String arresto() {
+        String nombre = super.getNombre();
+        int cedula = super.getDocumentoDeIdentidad();
+        String delito = super.getDelito();
+        Date fechaIngreso = super.getFechaDeIngreso();
+        return "El arresto se realizo al individuo " + nombre + " con la cedula de identidad o"
+                + " documeto de identidad " + cedula + " por el delito de " + delito + ", el individuo"
+                + " fue ingresado a un centro de reclucion la fecha" + fechaIngreso + " en la actualidad"
+                + " el sujeto se encuentra en libertad condicional.";
     }
+
     //Get
     public String getMotivoLibCond() {
         return motivoLibCond;
     }
 
-       //Set
+    //Set
     public void setMotivoLibCond(String motivoLibCond) {
         this.motivoLibCond = motivoLibCond;
     }
-
-    
 
     //Comstructor con datos
     public PresoLibertadCondicional(String motivoLibCond,
@@ -66,7 +66,7 @@ public class PresoLibertadCondicional extends PresoProcesoLibertad {
                 documentoDeIdentidad, fechaDeNacimiento,
                 fechaDeIngreso, reincidencia,
                 estadoDeSentencia, nivelDePeligrosidad, delito);
-         this.motivoLibCond = motivoLibCond;
+        this.motivoLibCond = motivoLibCond;
     }
 
     //toString
