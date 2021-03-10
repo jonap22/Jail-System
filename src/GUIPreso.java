@@ -535,12 +535,13 @@ public class GUIPreso extends javax.swing.JFrame {
                     switch (estadoDeSentencia) {
                         case "Prisión Preventiva":
                             p1 = new PresoPrisionPreventiva(juezEncargadoLC, numeroDeIngreso, nombre, apellido, nacionalidad, documentoDeIdentidad, fechaDeNacimiento, fechaDeIngreso, reincidencia, estadoDeSentencia, nivelDePeligrosidad, delito);
-
+                            break;
                         case "Condena Aplicada":
                             p1 = new PresoCondenaAplicada(tiempoCondena, juezEncargadoCA, nombre, apellido, nacionalidad, documentoDeIdentidad, fechaDeNacimiento, fechaDeIngreso, reincidencia, estadoDeSentencia, nivelDePeligrosidad, delito);
                             //Preso
                             pca1 = ((PresoCondenaAplicada) p1);
                             JOptionPane.showMessageDialog(rootPane, pca1.condenaAplicada(pca1.getTiempodecontena(), pca1.getJuezencargado()));
+                            break;
                         case "En Ejecución":
                             p1 = new PresoCumpliendoCondena(carcelAnterior, motivo, nombre, apellido, nacionalidad, documentoDeIdentidad, fechaDeNacimiento, fechaDeIngreso, reincidencia, estadoDeSentencia, nivelDePeligrosidad, delito);
                             //Preso
@@ -548,6 +549,7 @@ public class GUIPreso extends javax.swing.JFrame {
 
                             //Mensaje
                             JOptionPane.showMessageDialog(rootPane, pcc1.reasignacionCarcel(pcc1.getCarcelanterior(), pcc1.getMotivo()));
+                            break;
                         case "Proceso de Libertad Condicional":
                             p1 = new PresoLibertadCondicional(motivoLibertadC, nombre, apellido, nacionalidad, documentoDeIdentidad, fechaDeNacimiento, fechaDeIngreso, reincidencia, estadoDeSentencia, nivelDePeligrosidad, delito);
                             //Preso
@@ -556,8 +558,10 @@ public class GUIPreso extends javax.swing.JFrame {
                             //Mensaje
                             JOptionPane.showMessageDialog(rootPane,
                                     plc1.calculoTiempoRestante(plc1.getFechaDeIngreso()));
+                            break;
                         case "Proceso de Libertad":
                             p1 = new PresoLibre(nombre, apellido, nacionalidad, documentoDeIdentidad, fechaDeNacimiento, fechaDeIngreso, reincidencia, estadoDeSentencia, nivelDePeligrosidad, delito);
+                            break;
                         /*p1 = new Preso(nombre, apellido, nacionalidad,
                                     documentoDeIdentidad, fechaDeNacimiento, fechaDeIngreso,
                                     reincidencia, estadoDeSentencia, nivelDePeligrosidad,
