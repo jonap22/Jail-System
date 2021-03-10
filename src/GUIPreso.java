@@ -24,7 +24,7 @@ public class GUIPreso extends javax.swing.JFrame {
     public GUIPreso() {
         initComponents();
     }
-    
+
     public GUIPreso(ArrayList<Preso> misPresos) {
         initComponents();
         this.misPresos = misPresos;
@@ -39,7 +39,7 @@ public class GUIPreso extends javax.swing.JFrame {
             mat[i][2] = misPresos.get(i).getApellido();
         }
     }
-    
+
     public void limpiar() {
         //Limpia los registros ingresados
         txtNombre.setText("");
@@ -53,7 +53,7 @@ public class GUIPreso extends javax.swing.JFrame {
         cmbNivelDePeligrosidad.setSelectedIndex(0);
         rscFechaDeIngreso.setDatoFecha(null);
         rscFechaDeNacimiento.setDatoFecha(null);
-        
+
     }
 
     /**
@@ -449,7 +449,7 @@ public class GUIPreso extends javax.swing.JFrame {
         String juezEncargadoLC = "";
         double tiempoCondena = 0;
         String juezEncargadoCA = "";
-        
+
         try {
             if (valida(cedula) == true) {
                 //Datos
@@ -461,62 +461,70 @@ public class GUIPreso extends javax.swing.JFrame {
                 Date fechaDeIngreso = rscFechaDeIngreso.getDatoFecha();
                 delito = txtDelito.getText();
 
-                //Reincidencia
-                if (rdbSi.isSelected()) {
-                    reincidencia = "SI";
-                } else {
-                    reincidencia = "NO";
-                }
-
-                //Nivel de peligrosidad
-                String peligrosidad = cmbNivelDePeligrosidad.getSelectedItem().toString();
-                switch (peligrosidad) {
-                    case "Baja":
-                        nivelDePeligrosidad = 1;
-                    case "Media":
-                        nivelDePeligrosidad = 2;
-                    case "Alta":
-                        nivelDePeligrosidad = 3;
-                }
-
-                //Estado de sentencia
-                estadoDeSentencia = cmbEstadoDeSentencia.getSelectedItem().toString();
-                switch (estadoDeSentencia) {
-                    case "Prision Preventiva":
-                        juezEncargadoLC = JOptionPane.showInputDialog(rootPane,
-                                "Ingreso el nombre completo del encargado de dictar la prision "
-                                + "preventiva al sujeto ");
-                    case "Condena Aplicada":
-                        tiempoCondena = Integer.parseInt(JOptionPane.showInputDialog(rootPane,
-                                "Ingrese el número de años que el preso fue condenado"));
-                        juezEncargadoCA = JOptionPane.showInputDialog(rootPane,
-                                "Ingreso el nombre completo del encargado de dictar la prision "
-                                + "preventiva al sujeto ");
-                    case "En Ejecucion":
-                    
-                    case "Proceso de Libertad Condicional":
-                    
-                    case "Proceso de Libertad":
-                }
-
-                //Creación de preso
-                p1 = new Preso(nombre, apellido, nacionalidad,
-                        documentoDeIdentidad, fechaDeNacimiento, fechaDeIngreso,
-                        reincidencia, estadoDeSentencia, nivelDePeligrosidad,
-                        delito) {
-                    @Override
-                    protected String arresto() {
-                        String arresto = "";
-                        arresto = "Motivo de arresto: ";
-                        return arresto;
+                //Datos vacíos
+                if ((cmbEstadoDeSentencia.getSelectedIndex() != 0)
+                        && (cmbNivelDePeligrosidad.getSelectedIndex() != 0)
+                        && (txtNombre.getText() != "")
+                        && (txtDelito.getText() != "")) {
+                    //Reincidencia
+                    if (rdbSi.isSelected()) {
+                        reincidencia = "SI";
+                    } else {
+                        reincidencia = "NO";
                     }
-                };
 
-                //Añadir p1 a misPresos
-                misPresos.add(p1);
-                GUIPreso preso = new GUIPreso(misPresos);
-                System.out.println(misPresos.get(misPresos.size() - 1).getNombre());
-                
+                    //Nivel de peligrosidad
+                    String peligrosidad = cmbNivelDePeligrosidad.getSelectedItem().toString();
+                    switch (peligrosidad) {
+                        case "Baja":
+                            nivelDePeligrosidad = 1;
+                        case "Media":
+                            nivelDePeligrosidad = 2;
+                        case "Alta":
+                            nivelDePeligrosidad = 3;
+                    }
+
+                    //Estado de sentencia
+                    estadoDeSentencia = cmbEstadoDeSentencia.getSelectedItem().toString();
+                    switch (estadoDeSentencia) {
+                        case "Prision Preventiva":
+                            juezEncargadoLC = JOptionPane.showInputDialog(rootPane,
+                                    "Ingreso el nombre completo del encargado de dictar la prision "
+                                    + "preventiva al sujeto ");
+                        case "Condena Aplicada":
+                            tiempoCondena = Integer.parseInt(JOptionPane.showInputDialog(rootPane,
+                                    "Ingrese el número de años que el preso fue condenado"));
+                            juezEncargadoCA = JOptionPane.showInputDialog(rootPane,
+                                    "Ingreso el nombre completo del encargado de dictar la prision "
+                                    + "preventiva al sujeto ");
+                        case "En Ejecucion":
+
+                        case "Proceso de Libertad Condicional":
+
+                        case "Proceso de Libertad":
+                    }
+
+                    //Creación de preso
+                    p1 = new Preso(nombre, apellido, nacionalidad,
+                            documentoDeIdentidad, fechaDeNacimiento, fechaDeIngreso,
+                            reincidencia, estadoDeSentencia, nivelDePeligrosidad,
+                            delito) {
+                        @Override
+                        protected String arresto() {
+                            String arresto = "";
+                            arresto = "Motivo de arresto: ";
+                            return arresto;
+                        }
+                    };
+
+                    //Añadir p1 a misPresos
+                    misPresos.add(p1);
+                    GUIPreso preso = new GUIPreso(misPresos);
+                    System.out.println(misPresos.get(misPresos.size() - 1).getNombre());
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "Ingrese todos los datos");
+                }
+
             } else {
                 JOptionPane.showMessageDialog(null, "Cédula incorrecta");
             }
@@ -635,7 +643,7 @@ public class GUIPreso extends javax.swing.JFrame {
             }
         });
     }
-    
+
     public static boolean valida(String x) {
         int suma = 0;
         if (x.length() < 10) {
@@ -653,7 +661,7 @@ public class GUIPreso extends javax.swing.JFrame {
                     d = d + 2;
                 }
             }
-            
+
             for (int i = 0; i < a.length; i++) {
                 a[i] = a[i] * 2;
                 if (a[i] > 9) {
@@ -670,7 +678,7 @@ public class GUIPreso extends javax.swing.JFrame {
             } else {
                 return false;
             }
-            
+
         }
     }
 
