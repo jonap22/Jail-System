@@ -513,14 +513,14 @@ public class GUIPreso extends javax.swing.JFrame {
                                     "Ingrese el número de años que el preso fue condenado:"));
                             juezEncargadoCA = JOptionPane.showInputDialog(rootPane,
                                     "Ingreso el nombre completo del encargado de dictar la prision "
-                                    + "preventiva al sujeto :");
+                                    + "al sujeto :");
 
                             break;
                             
                         case "En Ejecución":
                             carcelAnterior = JOptionPane.showInputDialog(rootPane,
                                     "Ingrese el nombre del anterior centro de reclusión donde el "
-                                    + "sujeto es encontraba: ");
+                                    + "sujeto se encontraba: ");
                             motivo = JOptionPane.showInputDialog(rootPane,
                                     "Ingrese el motivo por el cual al sujeto se lo va a "
                                     + "reubicar en un nuevo centro de reclusión: ");
