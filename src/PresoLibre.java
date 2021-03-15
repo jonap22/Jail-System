@@ -1,4 +1,9 @@
 
+/**
+ *@author Otame
+ * @Date Monday, March 15
+ * @version 1.2
+ */
 import java.util.Date;
 
 /*
@@ -6,45 +11,39 @@ import java.util.Date;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-/**
- *
- * @author Faustito
- */
-public class PresoLibre extends PresoProcesoLibertad{
+public class PresoLibre extends PresoProcesoLibertad {
     //Variables
-    
-    
+
     //Métodos
-    public String arresto(){
-    String nombre=super.getNombre();
-    int cedula=super.getDocumentoDeIdentidad();
-    String delito=super.getDelito();
-    Date fechaIngreso=super.getFechaDeIngreso();
-    return "El arresto se realizo al individuo "+nombre+" con la cedula de identidad o"
-            + " documeto de identidad "+cedula+" por el delito de "+delito+", el individuo"
-            + " fue ingresado a un centro de reclucion la fecha "+fechaIngreso+" en la actualidad"
-            + " el sujeto se encuentra en libertad";
-    }
-    //Get
-  
     
+    //Método arresto
+    public String arresto() {
+        //Variables
+        String nombre = super.getNombre();
+        int cedula = super.getDocumentoDeIdentidad();
+        String delito = super.getDelito();
+        Date fechaIngreso = super.getFechaDeIngreso();
+        
+        //Texto de retorno
+        return "El arresto se realizo al individuo " + nombre + " con la cedula de identidad o"
+                + " documeto de identidad " + cedula + " por el delito de " + delito + ", el individuo"
+                + " fue ingresado a un centro de reclucion la fecha " + fechaIngreso + " en la actualidad"
+                + " el sujeto se encuentra en libertad";
+    }
+
     //Constructor clase padre - hija
     public PresoLibre(String nombre, String apellido,
-            String nacionalidad, int documentoDeIdentidad, 
-            Date fechaDeNacimiento, Date fechaDeIngreso, 
-            String reincidencia, String estadoDeSentencia, 
+            String nacionalidad, int documentoDeIdentidad,
+            Date fechaDeNacimiento, Date fechaDeIngreso,
+            String reincidencia, String estadoDeSentencia,
             int nivelDePeligrosidad, String delito) {
-        
-        super(nombre, 
-                apellido, nacionalidad, documentoDeIdentidad, 
-                fechaDeNacimiento, fechaDeIngreso, reincidencia, 
+
+        super(nombre,
+                apellido, nacionalidad, documentoDeIdentidad,
+                fechaDeNacimiento, fechaDeIngreso, reincidencia,
                 estadoDeSentencia, nivelDePeligrosidad, delito);
-        
-       
+
     }
-    
+
     //toString
-    
-    
 }

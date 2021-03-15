@@ -1,4 +1,10 @@
 
+/**
+*@author Otame
+*@Date Monday, March 15
+*@version 1.2
+*/
+
 import java.util.Date;
 
 /*
@@ -7,10 +13,6 @@ import java.util.Date;
  * and open the template in the editor.
  */
 
-/**
- *
- * @author junio
- */
 
 public abstract class Preso {
     //Variables

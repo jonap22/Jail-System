@@ -1,4 +1,10 @@
 
+/**
+*@author Otame
+*@Date Monday, March 15
+*@version 1.2
+*/
+
 import java.util.Date;
 
 /*
@@ -6,10 +12,7 @@ import java.util.Date;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-/**
- *
- * @author junio
- */
+
 public class PresoCumpliendoCondena extends Preso {
 
     //Variables
@@ -50,7 +53,7 @@ public class PresoCumpliendoCondena extends Preso {
         this.carcelAnterior = carcelanterior;
     }
 
-    //Constructor clase padre
+    //Constructores
     public PresoCumpliendoCondena(String nombre, String apellido,
             String nacionalidad, int documentoDeIdentidad,
             Date fechaDeNacimiento, Date fechaDeIngreso,
@@ -61,7 +64,7 @@ public class PresoCumpliendoCondena extends Preso {
                 estadoDeSentencia, nivelDePeligrosidad, delito);
     }
 
-    //Constructor con datos
+    //Constructor con carcelAnterior y motivo
     public PresoCumpliendoCondena(String carcelAnterior, String motivo,
             String nombre, String apellido, String nacionalidad,
             int documentoDeIdentidad, Date fechaDeNacimiento,

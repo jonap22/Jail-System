@@ -1,4 +1,10 @@
 
+/**
+*@author Otame
+*@Date Monday, March 15
+*@version 1.2
+*/
+
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;

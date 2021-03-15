@@ -1,4 +1,10 @@
 
+/**
+*@author Otame
+*@Date Monday, March 15
+*@version 1.2
+*/
+
 import java.util.Calendar;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -10,10 +16,7 @@ import java.util.GregorianCalendar;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-/**
- *
- * @author Faustito
- */
+
 public class PresoLibertadCondicional extends PresoProcesoLibertad {
 
     //Variables
@@ -31,14 +34,18 @@ public class PresoLibertadCondicional extends PresoProcesoLibertad {
         //Cálculo de días restantes
         dias = (tiempoFin - tiempoIngreso) / (1000 * 60 * 60 * 24);
 
-        return "El tiempo restante de la condena es " + dias + "días";
+        return "El tiempo restante de la condena es " + dias + " días";
     }
-
+    
+    //Métodos arresto
     public String arresto() {
+        //Variables
         String nombre = super.getNombre();
         int cedula = super.getDocumentoDeIdentidad();
         String delito = super.getDelito();
         Date fechaIngreso = super.getFechaDeIngreso();
+        
+        //Presentación
         return "El arresto se realizo al individuo " + nombre + " con la cedula de identidad o"
                 + " documeto de identidad " + cedula + " por el delito de " + delito + ", el individuo"
                 + " fue ingresado a un centro de reclucion la fecha" + fechaIngreso + " en la actualidad"

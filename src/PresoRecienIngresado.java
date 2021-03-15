@@ -1,4 +1,10 @@
 
+/**
+*@author Otame
+*@Date Monday, March 15
+*@version 1.2
+*/
+
 import java.util.Date;
 
 /*
@@ -7,10 +13,6 @@ import java.util.Date;
  * and open the template in the editor.
  */
 
-/**
- *
- * @author junio
- */
 public class PresoRecienIngresado extends Preso {
     //Variables
     private int numeroDeIngreso;
@@ -30,7 +32,7 @@ public class PresoRecienIngresado extends Preso {
         this.numeroDeIngreso = numerodeingreso;
     }
     
-    //Constructor clase padre
+    //Constructores
     public PresoRecienIngresado(String nombre, String apellido, 
             String nacionalidad, int documentoDeIdentidad, 
             Date fechaDeNacimiento, Date fechaDeIngreso,
@@ -45,7 +47,7 @@ public class PresoRecienIngresado extends Preso {
         
     }
     
-    //Constructor con datos
+    //Usando número de ingreso
     public PresoRecienIngresado(int numeroDeIngreso, String nombre, 
             String apellido, String nacionalidad, 
             int documentoDeIdentidad, Date fechaDeNacimiento, 

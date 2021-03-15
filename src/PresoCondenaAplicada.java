@@ -1,4 +1,10 @@
 
+/**
+*@author Otame
+*@Date Monday, March 15
+*@version 1.2
+*/
+
 import java.util.Date;
 
 /*
@@ -6,10 +12,7 @@ import java.util.Date;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-/**
- *
- * @author Faustito
- */
+
 public class PresoCondenaAplicada extends PresoRecienIngresado {
 
     //Variables

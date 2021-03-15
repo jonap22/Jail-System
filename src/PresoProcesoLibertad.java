@@ -1,4 +1,10 @@
 
+/**
+*@author Otame
+*@Date Monday, March 15
+*@version 1.2
+*/
+
 import java.util.Date;
 
 /*
@@ -7,10 +13,6 @@ import java.util.Date;
  * and open the template in the editor.
  */
 
-/**
- *
- * @author junio
- */
 public class PresoProcesoLibertad extends Preso{
     //Variables
     private String juezEncargado;
@@ -41,7 +43,7 @@ public class PresoProcesoLibertad extends Preso{
         throw new UnsupportedOperationException("Not supported yet."); 
     }
     
-    //Constructor clase padre
+    //Constructores
     public PresoProcesoLibertad(String nombre, String apellido, 
             String nacionalidad, int documentoDeIdentidad, 
             Date fechaDeNacimiento, Date fechaDeIngreso, 
@@ -53,7 +55,7 @@ public class PresoProcesoLibertad extends Preso{
                 estadoDeSentencia, nivelDePeligrosidad, delito);
     }
     
-    //Constructor con datos
+    //Constructor con juezEncargado y fechaSolicitud
     public PresoProcesoLibertad(String juezEncargado, Date fechaDeSolicitud, 
             String nombre, String apellido, 
             String nacionalidad, int documentoDeIdentidad, 
