@@ -34,7 +34,7 @@ public class PresoLibertadCondicional extends PresoProcesoLibertad {
         //Cálculo de días restantes
         dias = (tiempoFin - tiempoIngreso) / (1000 * 60 * 60 * 24);
 
-        return "El tiempo restante de la condena es " + dias + " días";
+        return "Los dias que el preso estuvo preso son los siguientes: " + dias;
     }
     
     //Métodos arresto
